@@ -1,0 +1,12 @@
+Options +FollowSymlinks
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule    ^/?$    index.php    [NC,L]
+RewriteRule    ^about/?$    index.php?page=about    [NC,L]
+RewriteRule    ^products/?$    index.php?page=products    [NC,L]
+RewriteRule    ^impressions/?$    index.php?page=impressions    [NC,L]
+RewriteRule    ^contact/?$    index.php?page=contact    [NC,L]
+RewriteRule    ^single-product/?$    index.php?page=single-product    [NC,L]
+RewriteRule    ^cart/?$    index.php?page=cart    [NC,L]
+
+RewriteRule    ^notfound/?$    index.php?page=notfound    [NC,L]

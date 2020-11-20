@@ -1,0 +1,118 @@
+.carousel-small-txt {
+    font-family: $fontMedium;
+    font-size: 16px;
+    color: $redColor;
+    margin-bottom: 15px;
+}
+
+.carousel-big-txt {
+    font-family: $fontBold;
+    font-size: 42px;
+    color: $blackColor;
+    margin-bottom: 5px;
+}
+
+.medium-txt {
+    font-family: $fontRegular;
+    font-size: 24px;
+    color: $blackColor;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: $fontBold;
+    font-size: 42px;
+    color: $blackColor;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-family: $fontBold;
+    font-size: 36px;
+    color: $blackColor;
+    margin-bottom: 5px;
+}
+p{
+    font-family: $fontRegular;
+    font-size: 18px;
+    color: $blackColor;
+}
+
+.product-name {
+    font-family: $fontSemibold;
+    font-size: 24px;
+    color: $blackColor;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-family: $fontExtrabold;
+    font-size: 20px;
+    color: $redColor;
+}
+
+.old-price {
+    font-family: $fontExtrabold;
+    font-size: 20px;
+    color: #BDBDBD;
+    text-decoration: line-through;
+}
+
+.card-impression {
+    font-family: $fontExtralight;
+    font-size: 18px;
+    color: $blackColor;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.card-buyer {
+    font-family: $fontBold;
+    font-size: 16px;
+    color: $blackColor;
+}
+.cart-article {
+    font-family: $fontExtralight;
+    font-size: 14px;
+    color: $blackColor;
+}
+.card-about-txt{
+    font-family: $fontExtralight;
+    font-size: 18px;
+    color: $blackColor;
+}
+.about-box-title{
+    font-family: $fontBold;
+    font-size: 36px;
+    color: $whiteColor;
+}
+.about-box-text{
+    font-family: $fontRegular;
+    font-size: 18px;
+    color: $whiteColor;
+}
+.category-big-txt{
+    font-size: 36px;
+    color: $blackColor;
+    font-family: $fontBold;
+    margin-bottom: 15px;
+}
+
+.white-color{
+    color: $whiteColor !important;
+}
+.product-desc-title{
+    font-size: 30px;
+    color: $blackColor;
+    font-family: $fontBold;
+    margin-bottom: 20px;
+}
+.product-desc{
+    font-size: 18px;
+    font-family: $fontRegular;
+    color: $blackColor;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+    padding: 25px 0;
+}

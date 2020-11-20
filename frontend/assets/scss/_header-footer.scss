@@ -1,0 +1,149 @@
+header {
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+.navbar-light .navbar-nav .active>.nav-link{
+    border-bottom: 3px solid $redColor;
+    color: $redColor;
+    font-family: $fontBold;
+}
+.navbar-light .navbar-nav .nav-link{
+    font-family: $fontRegular;
+    font-size: 16px;
+    color: $blackColor;
+    margin: 0 20px;
+    @include transition(ease .08s); 
+
+    &:hover{
+        color: $redColor;
+        border-bottom: 3px solid $redColor;
+    }
+}
+.chosen-lang{
+    display: flex;
+
+    img{
+        transform: rotate(270deg);
+    }
+}
+.language{
+    input{
+        font-family: $fontRegular;
+        font-size: 16px;
+        color: $blackColor;
+        border: none;
+        cursor: pointer;
+        width: 50px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+.language-list{
+    display: none;
+    font-family: $fontRegular;
+    font-size: 16px;
+    color: $blackColor;
+    padding: 10px 15px;
+    -webkit-box-shadow: 0 0 10px rgb(165, 165, 165);
+    box-shadow: 0 0 10px rgb(165, 165, 165);
+    margin-top: 10px;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+}
+.language-option{
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+.navbar{
+    padding-left: 0;
+    padding-right: 0;
+}
+.top-header{
+    background-color: $blackColor;
+    padding: 8px 0;
+    font-size: 14px;
+    color: $whiteColor;
+    font-family: $fontExtralight;
+
+    img{
+        margin-left: 30px;
+    }
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nar-right{
+    width: 115px;
+    display: flex;
+    justify-content: space-between;
+}
+.shoping-cart{
+    display: block;
+    position: relative;
+
+    label{
+        width: 14px;
+        height: 14px;
+        background-color: $redColor;
+        border-radius: 7px;
+        color: $whiteColor;
+        font-size: 10px;
+        font-family: $fontRegular;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -8px;
+        right: -6px;
+    }
+}
+
+footer{
+    background-color: $blackColor;
+    padding: 35px 0;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li{
+            margin: 0 30px;
+            a{
+                font-size: 16px;
+                color: $whiteColor !important;
+                font-family: $fontRegular;
+            }
+        }
+    }
+}
+.scroll-btn{
+    width: 40px;
+    height: 40px;
+    background-color: $whiteColor;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img{
+        transform: rotate(90deg);
+    }
+}
+.copyright{
+    font-size: 16px;
+    color: $whiteColor;
+    font-family: $fontExtralight;
+    text-align: center;
+    margin-top: 30px;
+}
