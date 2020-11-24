@@ -29,13 +29,53 @@
 }
 
 .container-big {
-    width: 1760px;
+    width: 90%;
     margin: 0 auto;
+
+    @media(min-width: $sm) {
+        width: 540px;
+    }
+
+    @media(min-width: $md) {
+        width: 720px;
+    }
+
+    @media(min-width: $lg) {
+        width: 960px;
+    }
+
+    @media(min-width: $xl) {
+        width: 1140px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 1760px;
+    }
 }
 
 .container-small {
-    width: 1400px;
+    width: 90%;
     margin: 0 auto;
+
+    @media(min-width: $sm) {
+        width: 540px;
+    }
+
+    @media(min-width: $md) {
+        width: 720px;
+    }
+
+    @media(min-width: $lg) {
+        width: 960px;
+    }
+
+    @media(min-width: $xl) {
+        width: 1140px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 1400px;
+    }
 }
 
 .container-fluid {
@@ -43,14 +83,31 @@
 }
 
 section {
-    padding: 80px 0;
+    padding: 50px 0;
+
+    @media(min-width: $sm) {
+        padding: 40px 0;
+    }
+
+    @media(min-width: $lg) {
+        padding: 50px 0;
+    }
+
+    @media(min-width: $xl) {
+        padding: 80px 0;
+    }
 }
 
 .carousel-indicators li {
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     border-radius: 6px;
     background-color: $whiteColor;
+
+    @media(min-width: $lg) {
+        width: 12px;
+        height: 12px;
+    }
 
 }
 
@@ -59,23 +116,72 @@ section {
 }
 
 .red-line {
-    width: 100px;
+    width: 70px;
     height: 3px;
     background-color: $redColor;
     border-radius: 3px;
-    margin: 0 auto 60px;
+    margin: 0 auto 30px;
+
+    @media(min-width: $sm) {
+        margin: 0 auto 30px;
+        width: 60px;
+    }
+
+    @media(min-width: $md) {
+        margin: 0 auto 30px;
+        width: 70px;
+    }
+
+    @media(min-width: $lg) {
+        margin: 0 auto 40px;
+        width: 100px;
+    }
+
+    @media(min-width: $xl) {
+        margin: 0 auto 60px;
+    }
 }
 
 .red-btn {
     font-family: $fontSemibold;
-    font-size: 16px;
+    font-size: 13px;
     color: $whiteColor;
-    width: 200px;
-    height: 48px;
+    width: 150px;
+    height: 30px;
     border-radius: 24px;
     border: none;
     background-color: $redColor;
     @include transition(ease .2s);
+
+    @media(min-width: $sm) {
+        font-size: 10px;
+        width: 110px;
+        height: 25px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 10px;
+        width: 140px;
+        height: 25px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 13px;
+        width: 170px;
+        height: 34px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 13px;
+        width: 170px;
+        height: 34px;
+    }
+
+    @media(min-width: $xxl) {
+        font-size: 16px;
+        width: 200px;
+        height: 48px;
+    }
 
     &:focus {
         outline: none;
@@ -99,14 +205,54 @@ section {
 .carousel-content {
     position: relative;
     z-index: 10;
-    height: 495px;
+    height: 350px;
     display: flex;
     align-items: center;
 
+    @media(min-width: $sm) {
+        height: 208px;
+    }
+
+    @media(min-width: $md) {
+        height: 228px;
+    }
+
+    @media(min-width: $lg) {
+        height: 312px;
+    }
+
+    @media(min-width: $xl) {
+        height: 312px;
+    }
+
+    @media(min-width: $xxl) {
+        height: 495px;
+    }
+
     .red-line {
-        margin-bottom: 32px;
+        margin-bottom: 5px;
         margin-top: 5px;
         margin-left: 0;
+
+        @media(min-width: $sm) {
+            margin-bottom: 5px;
+        }
+
+        @media(min-width: $md) {
+            margin-bottom: 5px;
+        }
+
+        @media(min-width: $lg) {
+            margin-bottom: 20px;
+        }
+
+        @media(min-width: $xl) {
+            margin-bottom: 20px;
+        }
+
+        @media(min-width: $xxl) {
+            margin-bottom: 32px;
+        }
     }
 }
 
@@ -115,15 +261,33 @@ section {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
 }
 
 .home-3-1-content {
-    width: 33.33%;
-    height: 420px;
+    width: 100%;
+    height: 260px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+
+    @media(min-width: $sm) {
+        width: 33.33%;
+        height: 245px;
+    }
+
+    @media(min-width: $md) {
+        height: 230px;
+    }
+
+    @media(min-width: $lg) {
+        height: 245px;
+    }
+
+    @media(min-width: $xl) {
+        height: 420px;
+    }
 
     &:hover {
         .hover-box {
@@ -180,10 +344,30 @@ section {
 .hoverbox-txt {
     display: flex;
     align-items: flex-end;
-    padding: 80px 60px;
+    padding: 30px;
     height: 100%;
     position: relative;
     z-index: 100;
+
+    @media(min-width: $sm) {
+        padding: 20px 25px;
+    }
+
+    @media(min-width: $md) {
+        padding: 20px;
+    }
+
+    @media(min-width: $lg) {
+        padding: 20px 15px;
+    }
+
+    @media(min-width: $xl) {
+        padding: 50px 40px;
+    }
+
+    @media(min-width: $xxl) {
+        padding: 80px 60px;
+    }
 }
 
 button {
@@ -191,9 +375,29 @@ button {
 }
 
 .new-product-top {
-    width: 335px;
+    width: 100%;
     height: 380px;
     position: relative;
+
+    @media(min-width: $sm) {
+        height: 140px;
+    }
+
+    @media(min-width: $md) {
+        height: 191px;
+    }
+
+    @media(min-width: $lg) {
+        height: 260px;
+    }
+
+    @media(min-width: $xl) {
+        height: 315px;
+    }
+
+    @media(min-width: $xxl) {
+        height: 380px;
+    }
 
     img {
         width: 100%;
@@ -213,6 +417,18 @@ button {
         text-align: center;
         align-items: flex-end;
 
+        @media(min-width: $sm) {
+            padding: 8px;
+        }
+
+        @media(min-width: $md) {
+            padding: 10px;
+        }
+
+        @media(min-width: $lg) {
+            padding: 20px;
+        }
+
         @include transition(ease .3s);
     }
 
@@ -228,6 +444,26 @@ button {
 .new-product {
     width: 335px;
     @include transition(ease .3s);
+
+    @media(min-width: $sm) {
+        width: 123px;
+    }
+
+    @media(min-width: $md) {
+        width: 168px;
+    }
+
+    @media(min-width: $lg) {
+        width: 228px;
+    }
+
+    @media(min-width: $xl) {
+        width: 275px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 335px;
+    }
 
     &:hover {
         -webkit-box-shadow: 0 0 10px rgb(165, 165, 165);
@@ -252,6 +488,30 @@ button {
     margin-bottom: 10px;
     @include transition(ease .3s);
 
+    @media(min-width: $sm) {
+        font-size: 10px;
+        width: 110px;
+        height: 25px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 10px;
+        width: 140px;
+        height: 25px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 13px;
+        width: 170px;
+        height: 34px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 16px;
+        width: 200px;
+        height: 48px;
+    }
+
     &:focus {
         outline: none;
     }
@@ -265,10 +525,30 @@ button {
 
 .new-product-bottom {
     padding: 20px 12px;
+
+    @media(min-width: $sm) {
+        padding: 10px 5px;
+    }
+
+    @media(min-width: $md) {
+        padding: 20px 12px;
+    }
 }
 
 .carouse-top-arrows {
     padding-top: 50px;
+
+    @media(min-width: $sm) {
+        padding-top: 50px;
+    }
+
+    @media(min-width: $md) {
+        padding-top: 30px;
+    }
+
+    @media(min-width: $lg) {
+        padding-top: 50px;
+    }
 
     .carousel-control-next,
     .carousel-control-prev {
@@ -279,6 +559,18 @@ button {
     .carousel-control-prev {
         right: 72px;
         left: unset;
+
+        @media(min-width: $sm) {
+            right: 52px;
+        }
+
+        @media(min-width: $md) {
+            right: 52px;
+        }
+
+        @media(min-width: $lg) {
+            right: 72px;
+        }
     }
 }
 
@@ -287,13 +579,45 @@ button {
     .carousel-control-next,
     .carousel-control-prev {
         top: unset;
-        bottom: -70px;
+        bottom: -64px;
         right: 12px;
+
+        @media(min-width: $sm) {
+            bottom: -98px;
+        }
+
+        @media(min-width: $md) {
+            bottom: -79px;
+        }
+
+        @media(min-width: $lg) {
+            bottom: -94px;
+        }
+
+        @media(min-width: $xl) {
+            bottom: -110px;
+        }
+
+        @media(min-width: $xxl) {
+            bottom: -70px;
+        }
     }
 
     .carousel-control-prev {
         right: 72px;
         left: unset;
+
+        @media(min-width: $sm) {
+            right: 52px;
+        }
+
+        @media(min-width: $md) {
+            right: 52px;
+        }
+
+        @media(min-width: $lg) {
+            right: 72px;
+        }
     }
 
 }
@@ -307,6 +631,21 @@ button {
     border-radius: 20px;
     -webkit-box-shadow: 0 0 10px rgb(165, 165, 165);
     box-shadow: 0 0 10px rgb(165, 165, 165);
+
+    @media(min-width: $sm) {
+        width: 25px;
+        height: 25px;
+    }
+
+    @media(min-width: $md) {
+        width: 25px;
+        height: 25px;
+    }
+
+    @media(min-width: $lg) {
+        width: 40px;
+        height: 40px;
+    }
 
     &:hover {
         -webkit-box-shadow: none;
@@ -363,6 +702,14 @@ button {
             margin-top: 15px;
             margin-left: 0;
             margin-bottom: 40px;
+
+            @media(min-width: $sm) {
+                margin-bottom: 15px;
+            }
+
+            @media(min-width: $md) {
+                margin-bottom: 40px;
+            }
         }
     }
 
@@ -408,9 +755,28 @@ button {
 }
 
 .action-top {
-    width: 680px;
-    height: 266px;
+    width: 100%;
     position: relative;
+
+    @media(min-width: $sm) {
+        height: 132px;
+    }
+
+    @media(min-width: $md) {
+        height: 180px;
+    }
+
+    @media(min-width: $lg) {
+        height: 242px;
+    }
+
+    @media(min-width: $xl) {
+        height: 266px;
+    }
+
+    @media(min-width: $xxl) {
+        height: 266px;
+    }
 
     img {
         width: 100%;
@@ -431,12 +797,45 @@ button {
         align-items: center;
         justify-content: center;
 
+        @media(min-width: $sm) {
+            padding: 10px;
+        }
+
+        @media(min-width: $md) {
+            padding: 10px;
+        }
+
+        @media(min-width: $lg) {
+            padding: 20px;
+        }
+
         @include transition(ease .3s);
     }
 }
 
 .action-product {
-    width: 680px;
+    width: 300px;
+
+    @media(min-width: $sm) {
+        width: 252px;
+    }
+
+    @media(min-width: $md) {
+        width: 342px;
+    }
+
+    @media(min-width: $lg) {
+        width: 463px;
+    }
+
+    @media(min-width: $xl) {
+        width: 555px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 680px;
+    }
+
     @include transition(ease .3s);
 
     &:hover {
@@ -449,15 +848,36 @@ button {
     }
 
     .new-product-bottom {
-        display: flex;
-
-
+        @media(min-width: $sm) {
+            display: flex;
+        }
     }
 }
 
-.action-bottom-left,
+.action-bottom-left {
+    width: 100%;
+
+    @media(min-width: $sm) {
+        width: 70%;
+    }
+
+
+    @media(min-width: $lg) {
+        width: 50%;
+    }
+}
+
 .action-bottom-right {
-    width: 50%;
+    width: 100%;
+
+    @media(min-width: $sm) {
+        width: 30%;
+    }
+
+
+    @media(min-width: $lg) {
+        width: 50%;
+    }
 }
 
 .action-bottom-right {
@@ -483,6 +903,24 @@ button {
     justify-content: center;
     align-items: center;
 
+    @media(min-width: $sm) {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    @media(min-width: $md) {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    @media(min-width: $lg) {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
     &.tag-on-products {
         position: absolute;
         top: 10px;
@@ -491,17 +929,62 @@ button {
 }
 
 .home-card {
-    width: 690px;
+    width: 324px;
     background-color: $whiteColor;
     -webkit-box-shadow: 0 0 10px rgb(165, 165, 165);
     box-shadow: 0 0 10px rgb(165, 165, 165);
-    padding: 40px 30px 100px;
+    padding: 20px;
     position: relative;
+    margin: 15px 0;
+
+    @media(min-width: $sm) {
+        width: 252px;
+        padding: 30px 20px 60px;
+        margin: 0;
+    }
+
+    @media(min-width: $md) {
+        width: 342px;
+        padding: 30px 20px 60px;
+    }
+
+    @media(min-width: $lg) {
+        width: 463px;
+        padding: 40px 30px 75px;
+    }
+
+    @media(min-width: $xl) {
+        width: 555px;
+        padding: 40px 30px 100px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 690px;
+    }
 
     .red-btn {
-        position: absolute;
-        bottom: 40px;
-        left: 30px;
+        margin-top: 30px;
+
+        @media(min-width: $sm) {
+            bottom: 20px;
+            left: 20px;
+            position: absolute;
+            margin-top: 0;
+        }
+
+        @media(min-width: $md) {
+            bottom: 15px;
+
+        }
+
+        @media(min-width: $lg) {
+            bottom: 20px;
+            left: 30px;
+        }
+
+        @media(min-width: $xl) {
+            bottom: 40px;
+        }
 
         &:hover {
             border: 1px solid $redColor;
@@ -690,10 +1173,11 @@ button {
     font-family: $fontExtralight;
     padding: 0 20px;
 
-    &.small-input{
+    &.small-input {
         width: 280px;
     }
-    &.impression-input{
+
+    &.impression-input {
         width: 340px;
     }
 
@@ -1180,6 +1664,7 @@ button {
     width: 580px;
     margin: 70px auto;
 }
+
 .payment-info {
     width: 580px;
     margin: 0 auto 70px;
@@ -1213,24 +1698,25 @@ button {
     margin-right: 5px;
 }
 
-.radio-holder{
+.radio-holder {
     display: flex;
     justify-content: space-between;
     width: 580px;
     margin: 0 auto 20px;
 }
-.contact-flex{
+
+.contact-flex {
     display: flex;
     justify-content: space-between;
 }
 
-.submit-holder{
+.submit-holder {
     position: absolute;
     right: 30px;
     bottom: 30px;
 }
 
-.confirmation-msg{
+.confirmation-msg {
     height: 55vh;
     font-family: $fontRegular;
     color: $blackColor;
@@ -1241,21 +1727,25 @@ button {
     align-items: center;
 }
 
-.step-2, .step-3, .step-4{
+.step-2,
+.step-3,
+.step-4 {
     display: none;
 }
 
-.modal-body{
+.modal-body {
     padding: 30px 40px;
 }
-.modal-content{
+
+.modal-content {
     border-radius: 0;
 }
-.modal-dialog{
+
+.modal-dialog {
     max-width: 800px;
 }
 
-.pp-info{
+.pp-info {
     display: none;
 }
 
@@ -1263,9 +1753,10 @@ button {
 
 // custom radio button
 
-.radio-btn-holder{
+.radio-btn-holder {
     position: relative;
 }
+
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
@@ -1277,9 +1768,9 @@ button {
     opacity: 0;
     cursor: pointer;
 }
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
-{
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
     position: relative;
     padding-left: 28px;
     cursor: pointer;
@@ -1289,8 +1780,9 @@ button {
     font-size: 18px;
     font-family: $fontRegular;
 }
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -1301,8 +1793,9 @@ button {
     border-radius: 100%;
     background: #fff;
 }
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -1314,12 +1807,14 @@ button {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-[type="radio"]:not(:checked) + label:after {
+
+[type="radio"]:not(:checked)+label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-[type="radio"]:checked + label:after {
+
+[type="radio"]:checked+label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);

@@ -104,7 +104,6 @@ $(".language-option").click(function () {
 });
 
 $(".prev-step").click(function () {
-
   if ($(".step-2").css("display") == "block") {
     $(".step-2").fadeOut(500);
     setTimeout(function () {
@@ -122,22 +121,19 @@ $(".prev-step").click(function () {
     $("#step3").removeClass("active");
     $("#step2").addClass("active");
   }
-
 });
 
-
-$('input:radio[name="paying-method"]').change(function() {
-  if($('.paypal').is(':checked')) { 
+$('input:radio[name="paying-method"]').change(function () {
+  if ($(".paypal").is(":checked")) {
     $(".card-info").fadeOut(400);
     setTimeout(function () {
       $(".pp-info").fadeIn(400);
     }, 400);
-   }
-  if($('.credit-card').is(':checked')) { 
+  }
+  if ($(".credit-card").is(":checked")) {
     $(".pp-info").fadeOut(400);
     setTimeout(function () {
       $(".card-info").fadeIn(400);
     }, 400);
-   }
-  
+  }
 });

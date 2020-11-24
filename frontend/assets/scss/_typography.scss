@@ -1,39 +1,131 @@
 .carousel-small-txt {
     font-family: $fontMedium;
-    font-size: 16px;
+    font-size: 12px;
     color: $redColor;
     margin-bottom: 15px;
+
+    @media(min-width: $sm) {
+        font-size: 11px;
+        margin-bottom: 0px;
+    }
+    @media(min-width: $md) {
+        font-size: 11px;
+    }
+    @media(min-width: $lg) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    @media(min-width: $xl) {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    @media(min-width: $xxl) {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
 }
 
 .carousel-big-txt {
     font-family: $fontBold;
-    font-size: 42px;
+    font-size: 23px;
     color: $blackColor;
     margin-bottom: 5px;
+
+    @media(min-width: $sm) {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    @media(min-width: $md) {
+        font-size: 23px;
+    margin-bottom: 5px;
+    }
+    @media(min-width: $lg) {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    @media(min-width: $xl) {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    @media(min-width: $xxl) {
+        font-size: 42px;
+        margin-bottom: 5px;
+    }
 }
 
 .medium-txt {
     font-family: $fontRegular;
-    font-size: 24px;
+    font-size: 14px;
     color: $blackColor;
     margin-bottom: 32px;
+
+    @media(min-width: $sm) {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+    @media(min-width: $md) {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    @media(min-width: $lg) {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    @media(min-width: $xl) {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    @media(min-width: $xxl) {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
 }
 
 h1 {
     font-family: $fontBold;
-    font-size: 42px;
+    font-size: 32px;
     color: $blackColor;
     margin-bottom: 15px;
     text-align: center;
+
+    @media(min-width: $sm){
+        font-size: 28px;
+    }
+    @media(min-width: $md){
+        font-size: 30px;
+    }
+    @media(min-width: $lg){
+        font-size: 35px;
+    }
+    @media(min-width: $xxl){
+        font-size: 42px;
+    }
 }
 
 h2 {
     font-family: $fontBold;
-    font-size: 36px;
+    font-size: 27px;
     color: $blackColor;
     margin-bottom: 5px;
+
+    @media(min-width: $sm){
+        font-size: 22px;
+    }
+    @media(min-width: $md){
+        font-size: 25px;
+    }
+    @media(min-width: $lg){
+        font-size: 28px;
+    }
+    @media(min-width: $xl){
+        font-size: 28px;
+    }
+    @media(min-width: $xxl){
+        font-size: 36px;
+    }
 }
-p{
+
+p {
     font-family: $fontRegular;
     font-size: 18px;
     color: $blackColor;
@@ -44,12 +136,38 @@ p{
     font-size: 24px;
     color: $blackColor;
     margin-bottom: 8px;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 13px;
+    }
+    @media(min-width: $lg){
+        font-size: 18px;
+    }
+    @media(min-width: $xl){
+        font-size: 24px;
+    }
 }
 
 .product-price {
     font-family: $fontExtrabold;
     font-size: 20px;
     color: $redColor;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 13px;
+    }
+    @media(min-width: $lg){
+        font-size: 16px;
+    }
+    @media(min-width: $xl){
+        font-size: 20px;
+    }
 }
 
 .old-price {
@@ -57,6 +175,19 @@ p{
     font-size: 20px;
     color: #BDBDBD;
     text-decoration: line-through;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 13px;
+    }
+    @media(min-width: $lg){
+        font-size: 16px;
+    }
+    @media(min-width: $xl){
+        font-size: 20px;
+    }
 }
 
 .card-impression {
@@ -65,50 +196,97 @@ p{
     color: $blackColor;
     font-style: italic;
     margin-bottom: 15px;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 13px;
+    }
+    @media(min-width: $lg){
+        font-size: 16px;
+    }
+    @media(min-width: $xl){
+        font-size: 18px;
+    }
 }
 
 .card-buyer {
     font-family: $fontBold;
     font-size: 16px;
     color: $blackColor;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 16px;
+    }
 }
+
 .cart-article {
     font-family: $fontExtralight;
     font-size: 14px;
     color: $blackColor;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 14px;
+    }
 }
-.card-about-txt{
+
+.card-about-txt {
     font-family: $fontExtralight;
     font-size: 18px;
     color: $blackColor;
+
+    @media(min-width: $sm){
+        font-size: 12px;
+    }
+    @media(min-width: $md){
+        font-size: 13px;
+    }
+    @media(min-width: $lg){
+        font-size: 16px;
+    }
+    @media(min-width: $xl){
+        font-size: 18px;
+    }
 }
-.about-box-title{
+
+.about-box-title {
     font-family: $fontBold;
     font-size: 36px;
     color: $whiteColor;
 }
-.about-box-text{
+
+.about-box-text {
     font-family: $fontRegular;
     font-size: 18px;
     color: $whiteColor;
 }
-.category-big-txt{
+
+.category-big-txt {
     font-size: 36px;
     color: $blackColor;
     font-family: $fontBold;
     margin-bottom: 15px;
 }
 
-.white-color{
+.white-color {
     color: $whiteColor !important;
 }
-.product-desc-title{
+
+.product-desc-title {
     font-size: 30px;
     color: $blackColor;
     font-family: $fontBold;
     margin-bottom: 20px;
 }
-.product-desc{
+
+.product-desc {
     font-size: 18px;
     font-family: $fontRegular;
     color: $blackColor;

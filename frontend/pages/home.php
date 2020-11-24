@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-<div data-aos="fade-up" data-aos-duration="500" class="d-flex">
+<div data-aos="fade-up" data-aos-duration="500" class="d-sm-flex">
     <div data-aos-offset="500" class="home-3-1-content">
         <div class="hover-box">
             <div class="white-frame"></div>
@@ -129,7 +129,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -145,7 +145,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -161,7 +161,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -183,7 +183,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -215,7 +215,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -231,7 +231,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -253,7 +253,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -269,7 +269,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -301,7 +301,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -344,7 +344,7 @@
             </div>
             <div class="red-line" data-aos="fade-up" data-aos-duration="500"></div>
             <div class="medium-txt" data-aos="fade-up" data-aos-duration="500">
-                Pored široke palete naših gotovih proizvoda, bavimo se<br />
+                Pored široke palete naših gotovih proizvoda, bavimo se<br class="d-none d-sm-block" />
                 izradom nameštaj koji ima mere samo iz Vašeg kutka.
             </div>
             <a><button class="red-btn" data-aos="fade-up" data-aos-duration="500">Kontaktiraj nas</button></a>
@@ -391,7 +391,7 @@
 
                             </div>
                         </div>
-                        <div class="action-product">
+                        <div class="action-product d-none d-sm-block">
                             <div class="action-top">
                                 <img src="assets/dist/img/home/action-img-2.jpg" alt="product image" />
 
@@ -423,7 +423,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="action-product">
+                        <div class="action-product d-none d-sm-block">
                             <div class="action-top">
                                 <img src="assets/dist/img/home/action-img-1.jpg" alt="product image" />
 
@@ -494,7 +494,7 @@
 
 <section class="background-image home-kitchen" data-aos="fade-up" data-aos-duration="500">
     <div class="container-small">
-        <div class="d-flex justify-content-between">
+        <div class="d-sm-flex justify-content-between">
 
             <div class="home-card">
                 <h2 data-aos="fade-up" data-aos-duration="500">Utisci zadovoljnih kupaca</h2>

@@ -3,32 +3,84 @@ header {
     -webkit-box-shadow: 3px 3px 5px 6px #ccc;
     box-shadow: 3px 3px 5px 6px #ccc;
 }
-.navbar-light .navbar-nav .active>.nav-link{
+
+.mobile-logo{
+    @media(min-width: $sm){
+        display: none;
+    }
+}
+.desktop-logo{
+    display: none;
+    @media(min-width: $sm){
+        display: block;
+    }
+}
+.navbar-brand{
+    display: block;
+
+    img{
+        width: 170px;
+        @media(min-width: $sm){
+            width: auto;
+        }
+    }
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
     border-bottom: 3px solid $redColor;
     color: $redColor;
     font-family: $fontBold;
 }
-.navbar-light .navbar-nav .nav-link{
+
+.navbar-light .navbar-nav .nav-link {
     font-family: $fontRegular;
     font-size: 16px;
     color: $blackColor;
-    margin: 0 20px;
-    @include transition(ease .08s); 
+    margin: 0;
+    display: inline-block;
+    padding: 8px;
+    @include transition(ease .08s);
 
-    &:hover{
+    @media(min-width: $sm) {
+        font-size: 16px;
+        margin: 0 20px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 16px;
+        margin: 0 20px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 15px;
+        margin: 0 10px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 16px;
+        margin: 0 20px;
+    }
+
+    &:hover {
         color: $redColor;
         border-bottom: 3px solid $redColor;
     }
 }
-.chosen-lang{
+
+.navbar-nav {
+    text-align: right;
+}
+
+.chosen-lang {
     display: flex;
 
-    img{
+    img {
         transform: rotate(270deg);
     }
 }
-.language{
-    input{
+
+.language {
+    input {
         font-family: $fontRegular;
         font-size: 16px;
         color: $blackColor;
@@ -36,12 +88,13 @@ header {
         cursor: pointer;
         width: 50px;
 
-        &:focus{
+        &:focus {
             outline: none;
         }
     }
 }
-.language-list{
+
+.language-list {
     display: none;
     font-family: $fontRegular;
     font-size: 16px;
@@ -54,42 +107,60 @@ header {
     background-color: white;
     z-index: 10;
 }
-.language-option{
+
+.language-option {
     cursor: pointer;
     margin-bottom: 3px;
 }
-.navbar{
+
+.navbar {
     padding-left: 0;
     padding-right: 0;
+    display: block;
+
+    @media(min-width: $sm){
+        display: flex;
+    }
 }
-.top-header{
+
+.top-header {
     background-color: $blackColor;
     padding: 8px 0;
     font-size: 14px;
     color: $whiteColor;
     font-family: $fontExtralight;
 
-    img{
+    img {
         margin-left: 30px;
     }
 }
 
-.space-between{
+.space-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nar-right{
+.nar-right {
     width: 115px;
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 23px;
+
+    @media(min-width: $lg) {
+        position: relative;
+        right: auto;
+        top: auto;
+    }
 }
-.shoping-cart{
+
+.shoping-cart {
     display: block;
     position: relative;
 
-    label{
+    label {
         width: 14px;
         height: 14px;
         background-color: $redColor;
@@ -106,19 +177,35 @@ header {
     }
 }
 
-footer{
+footer {
     background-color: $blackColor;
     padding: 35px 0;
 
-    ul{
+    .space-between {
+        display: block;
+        @media(min-width: $md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    ul {
         list-style-type: none;
         padding: 0;
-        margin: 0;
-        display: flex;
+        margin: 20px 0;
 
-        li{
-            margin: 0 30px;
-            a{
+        @media(min-width: $md) {
+            display: flex;
+            margin: 0;
+        }
+
+        li {
+
+            @media(min-width: $md) {
+                margin: 0 30px;
+            }
+
+            a {
                 font-size: 16px;
                 color: $whiteColor !important;
                 font-family: $fontRegular;
@@ -126,7 +213,8 @@ footer{
         }
     }
 }
-.scroll-btn{
+
+.scroll-btn {
     width: 40px;
     height: 40px;
     background-color: $whiteColor;
@@ -136,14 +224,32 @@ footer{
     align-items: center;
     cursor: pointer;
 
-    img{
+    img {
         transform: rotate(90deg);
     }
 }
-.copyright{
+
+.copyright {
     font-size: 16px;
     color: $whiteColor;
     font-family: $fontExtralight;
     text-align: center;
     margin-top: 30px;
+}
+
+.navbar-toggler {
+    right: 150px;
+    top: 17px;
+    border: none !important;
+    margin-left: auto;
+    display: block;
+    padding: 0;
+
+    @media(min-width: $sm){
+        position: absolute;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }

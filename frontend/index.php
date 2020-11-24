@@ -26,7 +26,7 @@
     <div class="top-header">
       <div class="container-big">
         <div class="space-between">
-          <div>Mail: info@konstantinhome.com | Tel: +381 9841012345</div>
+          <div>Mail: info@konstantinhome.com |<br class="d-sm-none"/> Tel: +381 9841012345</div>
           <div>
             <a><img src="assets/dist/img/header-footer/instagram.png" alt="instagram" /></a>
             <a><img src="assets/dist/img/header-footer/fb.png" alt="facebook" /></a>
@@ -37,7 +37,9 @@
 
     <div class="container-big">
       <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="./"><img src="assets/dist/img/header-footer/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="./">
+        <img src="assets/dist/img/header-footer/logo.png" alt="logo">
+      </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
