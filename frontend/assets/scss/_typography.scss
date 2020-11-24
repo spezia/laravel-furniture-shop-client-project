@@ -129,11 +129,18 @@ p {
     font-family: $fontRegular;
     font-size: 18px;
     color: $blackColor;
+
+    @media(min-width: $sm){
+        font-size: 15px;
+    }
+    @media(min-width: $md){
+        font-size: 18px;
+    }
 }
 
 .product-name {
     font-family: $fontSemibold;
-    font-size: 24px;
+    font-size: 20px;
     color: $blackColor;
     margin-bottom: 8px;
 
@@ -147,7 +154,7 @@ p {
         font-size: 18px;
     }
     @media(min-width: $xl){
-        font-size: 24px;
+        font-size: 23px;
     }
 }
 
@@ -258,14 +265,28 @@ p {
 
 .about-box-title {
     font-family: $fontBold;
-    font-size: 36px;
+    font-size: 30px;
     color: $whiteColor;
+
+    @media(min-width: $sm){
+        font-size: 29px;
+    }
+    @media(min-width: $md){
+        font-size: 36px;
+    }
 }
 
 .about-box-text {
     font-family: $fontRegular;
-    font-size: 18px;
+    font-size: 16px;
     color: $whiteColor;
+
+    @media(min-width: $sm){
+        font-size: 15px;
+    }
+    @media(min-width: $md){
+        font-size: 18px;
+    }
 }
 
 .category-big-txt {

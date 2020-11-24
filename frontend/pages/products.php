@@ -104,7 +104,205 @@
                 </ul>
             </div>
             <div class="products">
-                <div class="new-product-holder p-0">
+                <div class="clearfix p-0">
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 1</div>
+                            <div class="product-price">RSD 10.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <div class="discount-tag tag-on-products">-20%</div>
+                            <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 2</div>
+                            <div class="product-price">RSD 15.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 3</div>
+                            <div class="product-price">RSD 75.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 1</div>
+                            <div class="product-price">RSD 10.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <div class="discount-tag tag-on-products">-20%</div>
+                            <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 2</div>
+                            <div class="product-price">RSD 15.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 3</div>
+                            <div class="product-price">RSD 75.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 1</div>
+                            <div class="product-price">RSD 10.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <div class="discount-tag tag-on-products">-20%</div>
+                            <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 2</div>
+                            <div class="product-price">RSD 15.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 3</div>
+                            <div class="product-price">RSD 75.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 1</div>
+                            <div class="product-price">RSD 10.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <div class="discount-tag tag-on-products">-20%</div>
+                            <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 2</div>
+                            <div class="product-price">RSD 15.000</div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="500" class="new-product">
+                        <div class="new-product-top">
+                            <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
+
+                            <div class="new-product-hover">
+                                <div>
+                                    <button class="white-btn">Stavi u korpu</button>
+                                    <a href="single-product"><button class="white-btn">Pogledaj</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-product-bottom">
+                            <div class="product-name">Naziv Proizvoda Br. 3</div>
+                            <div class="product-price">RSD 75.000</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="new-product-holder p-0">
                     <div data-aos="fade-up" data-aos-duration="500" class="new-product">
                         <div class="new-product-top">
                             <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
@@ -307,7 +505,7 @@
                             <div class="product-price">RSD 75.000</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>

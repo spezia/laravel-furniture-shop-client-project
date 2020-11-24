@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="action-product">
+                        <div class="action-product d-none d-sm-block">
                             <div class="action-top">
                                 <img src="assets/dist/img/about/merch-2.jpg" alt="product image" />
 
@@ -140,7 +140,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="action-product">
+                        <div class="action-product d-none d-sm-block">
                             <div class="action-top">
                                 <img src="assets/dist/img/about/merch-1.jpg" alt="product image" />
 

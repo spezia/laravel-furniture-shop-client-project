@@ -718,7 +718,16 @@ button {
 
         .red-line {
             margin-left: 0;
-            margin-bottom: 30px;
+            margin-bottom: 5px;
+
+            @media(min-width: $lg) {
+                margin-bottom: 20px;
+            }
+
+
+            @media(min-width: $xxl) {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -996,34 +1005,101 @@ button {
 
 
 .about-txt-container {
-    width: 1160px;
+    width: 300px;
     margin: 0 auto;
     text-align: center;
+
+    @media(min-width: $sm) {
+        width: 550px;
+    }
+
+    @media(min-width: $md) {
+        width: 740px;
+    }
+
+    @media(min-width: $lg) {
+        width: 960px;
+    }
+
+    @media(min-width: $xl) {
+        width: 1160px;
+    }
 }
 
 .about-box-holder {
-    display: flex;
-    justify-content: space-between;
+
+    @media(min-width: $sm) {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
 
 .about-box {
-    width: 600px;
     background-color: $blackColor;
-    padding: 20px 30px;
-    margin: 25px 50px;
+    padding: 10px 15px;
+    margin: 20px 0;
+
+    @media(min-width: $sm) {
+        padding: 20px;
+        margin: 25px 10px;
+    }
+
+    @media(min-width: $md) {
+        padding: 20px;
+        margin: 25px 20px;
+    }
+
+    @media(min-width: $lg) {
+        padding: 20px 30px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 600px;
+        padding: 20px 30px;
+        margin: 25px 50px;
+    }
 }
 
 .product-categories-holder {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+
+    @media(min-width: $lg) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
 }
 
 .categories {
-    width: 335px;
+    width: 100%;
     background-color: $grayColor;
     padding: 8px 20px 14px;
+    margin-bottom: 20px;
     overflow: hidden;
+
+    @media(min-width: $sm) {
+        padding: 8px 20px 14px;
+    }
+
+    @media(min-width: $md) {
+        padding: 8px 20px 14px;
+    }
+
+    @media(min-width: $lg) {
+        width: 240px;
+        padding: 8px 20px 14px;
+    }
+
+    @media(min-width: $xl) {
+        width: 275px;
+        padding: 8px 20px 14px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 335px;
+        padding: 8px 20px 14px;
+    }
 
     .red-line {
         margin-bottom: 40px;
@@ -1034,6 +1110,24 @@ button {
         margin: 0;
         padding: 0;
         list-style-type: none;
+
+        @media(min-width: $sm) {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+
+        @media(min-width: $md) {
+            columns: 3;
+            -webkit-columns: 3;
+            -moz-columns: 3;
+        }
+
+        @media(min-width: $lg) {
+            columns: 1;
+            -webkit-columns: 1;
+            -moz-columns: 1;
+        }
 
         li {
             margin-bottom: 8px;
@@ -1064,10 +1158,80 @@ button {
 }
 
 .products {
-    width: 1045px;
+    width: 100%;
+
+    @media(min-width: $sm) {
+        width: 100%;
+    }
+
+    @media(min-width: $md) {
+        width: 100%;
+    }
+
+    @media(min-width: $lg) {
+        width: 700px;
+    }
+
+    @media(min-width: $xl) {
+        width: 850px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 1045px;
+    }
 
     .new-product {
-        margin-bottom: 20px;
+
+        width: 300px;
+        margin: 0 auto 20px;
+
+        @media(min-width: $sm) {
+            float: left;
+            width: 258px;
+            margin: 0 6px 20px;
+        }
+
+        @media(min-width: $md) {
+            width: 228px;
+            margin: 0 6px 20px;
+        }
+
+        @media(min-width: $lg) {
+            width: 335px;
+            margin: 0 6px 20px;
+        }
+
+        @media(min-width: $xl) {
+            width: 270px;
+            margin: 0 6px 20px;
+        }
+
+        @media(min-width: $xxl) {
+            width: 335px;
+            margin: 0 6px 20px;
+        }
+
+        .new-product-top {
+            @media(min-width: $sm) {
+                height: 293px;
+            }
+
+            @media(min-width: $md) {
+                height: 259px;
+            }
+
+            @media(min-width: $lg) {
+                height: 380px;
+            }
+
+            @media(min-width: $xl) {
+                height: 307px;
+            }
+
+            @media(min-width: $xxl) {
+                height: 380px;
+            }
+        }
     }
 }
 
@@ -1096,9 +1260,13 @@ button {
     .page-link {
         color: $blackColor;
         font-family: $fontRegular;
-        font-size: 16px;
+        font-size: 13px;
         border: none;
-        margin: 0 10px;
+
+        @media(min-width: $sm) {
+            font-size: 16px;
+            margin: 0 10px;
+        }
 
         &:hover {
             color: $redColor;
