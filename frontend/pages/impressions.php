@@ -35,7 +35,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="impressions-holder">
-                        <img class="quotes-left" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-left quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                         <div>
                             <div class="card-impression">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ex a quam semper
@@ -44,12 +44,12 @@
                             <div class="card-buyer">Petar Petrovic</div>
                             <div class="cart-article">Naziv proizvoda</div>
                         </div>
-                        <img class="quotes-right" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-right quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="impressions-holder">
-                        <img class="quotes-left" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-left quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                         <div>
                             <div class="card-impression">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ex a quam semper
@@ -58,12 +58,12 @@
                             <div class="card-buyer">Petar Petrovic</div>
                             <div class="cart-article">Naziv proizvoda</div>
                         </div>
-                        <img class="quotes-right" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-right quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="impressions-holder">
-                        <img class="quotes-left" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-left quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                         <div>
                             <div class="card-impression">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ex a quam semper
@@ -72,7 +72,7 @@
                             <div class="card-buyer">Petar Petrovic</div>
                             <div class="cart-article">Naziv proizvoda</div>
                         </div>
-                        <img class="quotes-right" src="assets/dist/img/impressions/quote.png" alt="quotes" />
+                        <img class="quotes-right quotes" src="assets/dist/img/impressions/quote.png" alt="quotes" />
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -135,7 +135,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -151,7 +151,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -173,7 +173,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -205,7 +205,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -221,7 +221,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -243,7 +243,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -259,7 +259,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -291,7 +291,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 

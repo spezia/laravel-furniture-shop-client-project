@@ -114,7 +114,7 @@
                     <div class="info">* u cenu je uračunat PDV</div>
                 </div>
 
-                <div class="text-right">
+                <div class="text-center text-lg-right">
                     <button class="next-step next-step-btn">Sledeći korak</button>
                 </div>
             </div>

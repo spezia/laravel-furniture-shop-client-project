@@ -193,7 +193,19 @@ section {
     }
 
     &.with-border {
-        margin: 50px 0;
+        margin: 20px 0;
+
+        @media(min-width: $sm) {
+            margin: 20px 0;
+        }
+
+        @media(min-width: $md) {
+            margin: 30px 0;
+        }
+
+        @media(min-width: $lg) {
+            margin: 50px 0;
+        }
 
         &:hover {
             border: 1px solid $redColor
@@ -750,6 +762,26 @@ button {
         .red-line {
             margin-left: 0;
             margin-bottom: 30px;
+
+            @media(min-width: $sm) {
+                margin-bottom: 5px;
+            }
+
+            @media(min-width: $md) {
+                margin-bottom: 5px;
+            }
+
+            @media(min-width: $lg) {
+                margin-bottom: 20px;
+            }
+
+            @media(min-width: $xl) {
+                margin-bottom: 20px;
+            }
+
+            @media(min-width: $xxl) {
+                margin-bottom: 32px;
+            }
         }
     }
 
@@ -1302,14 +1334,48 @@ button {
 }
 
 .impressions-holder {
-    width: 690px;
+    width: 250px;
     margin: 15px auto;
-    padding: 130px 45px;
+    padding: 40px 10px;
     display: flex;
     justify-content: center;
     -webkit-box-shadow: 0 0 10px rgb(165, 165, 165);
     box-shadow: 0 0 10px rgb(165, 165, 165);
     position: relative;
+
+    @media(min-width: $sm) {
+        width: 435px;
+        margin: 15px auto;
+        padding: 85px 30px;
+    }
+
+    @media(min-width: $md) {
+        width: 500px;
+        margin: 15px auto;
+        padding: 105px 45px;
+    }
+
+    @media(min-width: $lg) {
+        width: 690px;
+        margin: 15px auto;
+        padding: 130px 45px;
+    }
+}
+
+.quotes {
+    width: 25px;
+
+    @media(min-width: $sm) {
+        width: 70px;
+    }
+
+    @media(min-width: $md) {
+        width: 90px;
+    }
+
+    @media(min-width: $lg) {
+        width: auto;
+    }
 }
 
 .quotes-left {
@@ -1326,7 +1392,17 @@ button {
 }
 
 .contact-form {
-    width: 550px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media(min-width: $lg) {
+        width: 465px;
+        margin-bottom: 0;
+    }
+
+    @media(min-width: $xl) {
+        width: 550px;
+    }
 
 }
 
@@ -1342,7 +1418,15 @@ button {
     padding: 0 20px;
 
     &.small-input {
-        width: 280px;
+        width: 100%;
+
+        @media(min-width: $sm) {
+            width: 240px;
+        }
+
+        @media(min-width: $md) {
+            width: 280px;
+        }
     }
 
     &.impression-input {
@@ -1566,14 +1650,34 @@ button {
 
 .product-number {
     background-color: $whiteColor;
-    width: 330px;
-    height: 48px;
+    width: 100%;
+    height: 36px;
     border: 1px solid #BDBDBD;
     border-radius: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+
+    @media(min-width: $sm) {
+        width: 245px;
+        height: 36px;
+    }
+
+    @media(min-width: $md) {
+        width: 245px;
+        height: 36px;
+    }
+
+    @media(min-width: $lg) {
+        width: 245px;
+        height: 36px;
+    }
+
+    @media(min-width: $xl) {
+        width: 330px;
+        height: 48px;
+    }
 }
 
 .up-down {
@@ -1582,6 +1686,22 @@ button {
     color: $blackColor;
     background-color: $transparent;
     border: none;
+
+    @media(min-width: $sm) {
+        font-size: 30px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 30px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 23px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 30px;
+    }
 
     &:hover {
         color: $redColor;
@@ -1660,11 +1780,27 @@ button {
 }
 
 .cart-steps {
-    padding: 15px 50px;
+    padding: 20px;
     background-color: $grayColor;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
+
+    @media(min-width: $sm) {
+        padding: 15px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media(min-width: $md) {
+        padding: 15px;
+    }
+
+    @media(min-width: $lg) {
+        padding: 15px;
+    }
+
+    @media(min-width: $xl) {
+        padding: 15px 50px;
+    }
 }
 
 .step {
@@ -1685,30 +1821,74 @@ button {
 }
 
 .step-number {
-    font-size: 36px;
+    font-size: 25px;
     color: $blackColor;
     font-family: $fontBold;
     margin-right: 7px;
+
+    @media(min-width: $sm) {
+        font-size: 18px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 23px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 36px;
+    }
 }
 
 .step-name {
     font-size: 18px;
     color: $blackColor;
     font-family: $fontRegular;
+
+    @media(min-width: $sm) {
+        font-size: 11px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 14px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 18px;
+    }
 }
 
 .steps-holder {
     background-color: $grayColor;
-    padding: 30px;
+    padding: 30px 15px;
     position: relative;
+
+    @media(min-width: $sm) {
+        padding: 30px 10px;
+    }
+
+    @media(min-width: $md) {
+        padding: 30px;
+    }
 }
 
 .cart-table {
     width: 100%;
-    margin-bottom: 70px;
+    margin: 0 auto;
+
+    @media(min-width: $sm) {
+        width: 500px;
+    }
+
+    @media(min-width: $lg) {
+        width: 100%;
+        margin-bottom: 70px;
+    }
 
     tr {
-        border-bottom: 1px solid $blackColor;
+        @media(min-width: $lg) {
+            border-bottom: 1px solid $blackColor;
+        }
+
     }
 
     th {
@@ -1724,14 +1904,61 @@ button {
     }
 
     td {
-        padding: 15px 30px;
+        padding: 15px 10px;
+
+        &:nth-child(1) {
+            @media(min-width: $lg) {
+                width: 40%;
+            }
+
+        }
+
+        &:nth-child(2) {
+            @media(min-width: $lg) {
+                width: 15%;
+            }
+
+        }
+
+        &:nth-child(3) {
+            @media(min-width: $lg) {
+                width: 30%;
+            }
+
+        }
+
+        &:nth-child(4) {
+            @media(min-width: $lg) {
+                width: 15%;
+            }
+
+        }
+
+        @media(min-width: $sm) {
+            padding: 15px 20px;
+        }
+
+        @media(min-width: $md) {
+            padding: 15px 30px;
+        }
+
+        @media(min-width: $lg) {
+            padding: 15px;
+        }
+
+        @media(min-width: $xxl) {
+            padding: 15px 30px;
+        }
     }
 }
 
 .table-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    @media(min-width: $sm) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     &:nth-child(1) {
         justify-content: start;
@@ -1742,26 +1969,99 @@ button {
     width: 120px;
     height: 120px;
     margin-right: 15px;
+
+    @media(min-width: $sm) {
+        width: 120px;
+        height: 120px;
+        margin-right: 15px;
+    }
+
+    @media(min-width: $md) {
+        width: 120px;
+        height: 120px;
+        margin-right: 15px;
+    }
+
+    @media(min-width: $lg) {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+    }
+
+    @media(min-width: $xl) {
+        width: 120px;
+        height: 120px;
+        margin-right: 15px;
+    }
 }
 
 .cart-product-title {
     font-family: $fontSemibold;
     font-size: 24px;
     color: $blackColor;
+
+    @media(min-width: $sm) {
+        font-size: 24px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 24px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 19px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 24px;
+    }
 }
 
 .cart-price {
     font-size: 20px;
     color: $redColor;
     font-family: $fontExtrabold;
+    display: flex;
+
+    @media(min-width: $sm) {
+        font-size: 20px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 20px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 16px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 20px;
+    }
+
 
     input {
-        font-size: 20px;
         color: $redColor;
-        font-family: $fontExtrabold;
         border: none;
         background-color: transparent;
-        width: 100px;
+        margin-left: 7px;
+        max-width: 100px;
+
+        @media(min-width: $sm) {
+            max-width: 100px;
+        }
+
+        @media(min-width: $md) {
+            max-width: 100px;
+        }
+
+        @media(min-width: $lg) {
+            max-width: 70px;
+        }
+
+        @media(min-width: $xl) {
+            max-width: 100px;
+        }
 
         &:focus {
             outline: none;
@@ -1770,15 +2070,48 @@ button {
 }
 
 .final-price-holder {
-    width: 550px;
+    width: 100%;
     margin-left: auto;
-    margin-bottom: 120px;
+    margin-bottom: 50px;
+
+    @media(min-width: $sm) {
+        width: 500px;
+        margin: 0 auto 70px;
+    }
+
+
+    @media(min-width: $lg) {
+        width: 430px;
+        margin-bottom: 80px;
+        margin-right: 0;
+    }
+
+    @media(min-width: $xl) {
+        width: 550px;
+        margin-bottom: 120px;
+    }
 
     .info {
         font-size: 16px;
         color: $blackColor;
         font-family: $fontExtralight;
         text-align: right;
+
+        @media(min-width: $sm) {
+            font-size: 16px;
+        }
+
+        @media(min-width: $md) {
+            font-size: 16px;
+        }
+
+        @media(min-width: $lg) {
+            font-size: 13px;
+        }
+
+        @media(min-width: $xl) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -1801,6 +2134,22 @@ button {
     color: $redColor;
     font-family: $fontExtrabold;
 
+    @media(min-width: $sm) {
+        font-size: 16px;
+    }
+
+    @media(min-width: $md) {
+        font-size: 16px;
+    }
+
+    @media(min-width: $lg) {
+        font-size: 16px;
+    }
+
+    @media(min-width: $xl) {
+        font-size: 20px;
+    }
+
     input {
         border: none;
         background-color: transparent;
@@ -1813,15 +2162,30 @@ button {
 }
 
 .next-step-btn {
-    width: 550px;
-    height: 48px;
+    width: 100%;
+    height: 35px;
     border: none;
     border-radius: 24px;
     background-color: $redColor;
     cursor: pointer;
     color: $whiteColor;
-    font-size: 16px;
+    font-size: 14px;
     font-family: $fontSemibold;
+
+    @media(min-width: $sm) {
+        width: 500px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    @media(min-width: $lg) {
+        width: 430px;
+    }
+
+    @media(min-width: $xl) {
+        width: 550px;
+        height: 48px;
+    }
 
     &:focus {
         outline: none;
@@ -1829,13 +2193,33 @@ button {
 }
 
 .buyer-info {
-    width: 580px;
-    margin: 70px auto;
+    width: 100%;
+    margin: 40px auto;
+
+    @media(min-width: $sm) {
+        width: 500px;
+        margin: 50px auto;
+    }
+
+    @media(min-width: $md) {
+        width: 580px;
+        margin: 70px auto;
+    }
 }
 
 .payment-info {
-    width: 580px;
-    margin: 0 auto 70px;
+    width: 100%;
+    margin: 40px auto;
+
+    @media(min-width: $sm) {
+        width: 500px;
+        margin: 50px auto;
+    }
+
+    @media(min-width: $md) {
+        width: 580px;
+        margin: 70px auto;
+    }
 }
 
 .prev-step {
@@ -1850,6 +2234,26 @@ button {
     display: inline-flex;
     align-items: center;
     margin-right: 50px;
+
+    @media(min-width: $sm) {
+        width: 80px;
+        height: 48px;
+        font-size: 16px;
+        margin-right: 50px;
+    }
+
+    @media(min-width: $md) {
+        width: 75px;
+        height: 48px;
+        font-size: 13px;
+        margin-right: 0px;
+    }
+
+    @media(min-width: $lg) {
+        width: 80px;
+        font-size: 16px;
+        margin-right: 50px;
+    }
 
     &:focus {
         outline: none;
@@ -1869,19 +2273,35 @@ button {
 .radio-holder {
     display: flex;
     justify-content: space-between;
-    width: 580px;
+    width: 100%;
     margin: 0 auto 20px;
+
+    @media(min-width: $sm) {
+        width: 500px;
+    }
+
+    @media(min-width: $md) {
+        width: 580px;
+        margin: 70px auto;
+    }
 }
 
 .contact-flex {
-    display: flex;
-    justify-content: space-between;
+
+    @media(min-width: $sm) {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .submit-holder {
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
+
+
+    @media(min-width: $xl) {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+    }
 }
 
 .confirmation-msg {
@@ -1990,3 +2410,71 @@ button {
 
 
 // custom radio button
+
+
+@media (max-width: 991px) {
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    td,
+    th,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #e4e4e4;
+        position: relative;
+    }
+
+    td:before {
+        /* Now like a table header */
+        // position: absolute;
+        /* Top/left values mimic padding */
+        // top: 6px;
+        // left: 6px;
+        // width: 45%;
+        // padding-right: 10px;
+        // white-space: nowrap;
+        display: block;
+        margin-bottom: 10px;
+        font-family: $fontBold;
+        color: $blackColor;
+        font-size: 16px;
+    }
+
+    /*
+	Label the data
+	*/
+    td:nth-of-type(1):before {
+        content: "Artikl";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Cena";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Količina";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Ukupno";
+    }
+}
