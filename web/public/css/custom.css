@@ -1,0 +1,114 @@
+.table th,
+.table td {
+    vertical-align: middle !important;
+}
+
+.width80 {
+    width: 80px;
+}
+
+.width160 {
+    width: 160px;
+}
+
+.width280 {
+    width: 280px;
+}
+
+.width350 {
+    width: 350px;
+}
+
+.width100 {
+    width: 100px;
+}
+
+.width200 {
+    width: 200px;
+}
+
+.widthfull {
+    width: 100%;
+}
+
+.text-weight500 {
+    font-weight: 500;
+}
+
+.margin-top20 {
+    margin-top: 20px;
+}
+
+.text-underline-hover:hover {
+    text-decoration: underline;
+}
+
+.campaigns-details-delete {
+    cursor: pointer;
+    font-size: 12px;
+    vertical-align: top;
+    color: black;
+}
+
+.campaigns-details-delete:hover {
+    color: #3c8dbc !important;
+}
+
+.generate-msg-text {
+    display: none;
+}
+
+.no-borders {
+  border-radius: 0;
+}
+
+.round-borders {
+  border-radius: 100%;
+}
+
+.margin-left5 {
+    margin-left: 5px;
+}
+
+.remove-item, .remove-existed-item {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.box-header .box-tools {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.box-footer {
+    margin-bottom: 30px;
+}
+
+.label-success  {
+    background-color: #00a65a !important;
+}
+.label-danger  {
+    background-color: #ca195a !important;
+}
+.label-default  {
+    background-color: #5e5545 !important;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
