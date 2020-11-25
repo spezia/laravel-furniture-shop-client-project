@@ -1,0 +1,1 @@
+@if($item->is_enabled) <span class="label label-success">{{ __('Enabled') }}</span> @else <span class="label label-danger">{{ __('Disabled') }}</span> @endif
