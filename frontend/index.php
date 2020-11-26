@@ -26,7 +26,7 @@
     <div class="top-header">
       <div class="container-big">
         <div class="space-between">
-          <div>Mail: info@konstantinhome.com |<br class="d-sm-none"/> Tel: +381 9841012345</div>
+          <div>Mail: info@konstantinhome.com |<br class="d-sm-none" /> Tel: +381 9841012345</div>
           <div>
             <a><img src="assets/dist/img/header-footer/instagram.png" alt="instagram" /></a>
             <a><img src="assets/dist/img/header-footer/fb.png" alt="facebook" /></a>
@@ -38,8 +38,8 @@
     <div class="container-big">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="./">
-        <img src="assets/dist/img/header-footer/logo.png" alt="logo">
-      </a>
+          <img src="assets/dist/img/header-footer/logo.png" alt="logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -54,8 +54,16 @@
             <li class="nav-item <?php if (isset($_GET['page']) && $_GET['page'] == 'about') { echo 'active'; } ?>">
               <a class="nav-link" href="about">O nama</a>
             </li>
-            <li class="nav-item <?php if (isset($_GET['page']) && $_GET['page'] == 'products') { echo 'active'; } ?>">
+            <li class="nav-item has-dropdown <?php if (isset($_GET['page']) && $_GET['page'] == 'products') { echo 'active'; } ?>">
               <a class="nav-link" href="products">Proizvodi</a>
+
+              <div class="categories-dropdown">
+                <ul>
+                  <li><a href="products">Naziv Kategorije</a></li>
+                  <li><a href="products">Naziv Kategorije</a></li>
+                  <li><a href="products">Naziv Kategorije</a></li>
+                </ul>
+              </div>
             </li>
             <li
               class="nav-item <?php if (isset($_GET['page']) && $_GET['page'] == 'impressions') { echo 'active'; } ?>">
@@ -75,14 +83,15 @@
           </a>
           <div class="language">
             <div class="chosen-lang">
-              <input type="text" name="selected-language" readonly="readonly" class="active-language" value="Srb"/> <img src="assets/dist/img/home/arrow-black.png"/>
+              <input type="text" name="selected-language" readonly="readonly" class="active-language" value="Srb" />
+              <img src="assets/dist/img/home/arrow-black.png" />
             </div>
-              <div class="language-list">
-                <div class="language-option">Srb</div>
-                <div class="language-option">Nem</div>
-                <div class="language-option">Fra</div>
-                <div class="language-option">Ita</div>
-              </div>
+            <div class="language-list">
+              <div class="language-option">Srb</div>
+              <div class="language-option">Nem</div>
+              <div class="language-option">Fra</div>
+              <div class="language-option">Ita</div>
+            </div>
           </div>
         </div>
       </nav>
@@ -106,9 +115,9 @@
         <img class="footer-logo" src="assets/dist/img/header-footer/logo-footer.png" alt="footer logo" />
 
         <ul>
-          <li><a>O nama</a></li>
-          <li><a>Proizvodi</a></li>
-          <li><a>Kontakt</a></li>
+          <li><a href="about">O nama</a></li>
+          <li><a href="products">Proizvodi</a></li>
+          <li><a href="contact">Kontakt</a></li>
         </ul>
 
         <div class="scroll-btn"><img src="assets/dist/img/home/arrow-black.png" alt="" /></div>

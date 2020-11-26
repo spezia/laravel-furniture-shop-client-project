@@ -7,7 +7,7 @@
             </div>
             <div class="red-line"></div>
             <div class="medium-txt">Ponosni smo na svoje kupce, saradnja sa nama je prijatna.</div>
-            <a><button class="red-btn">Pogledaj proizvode</button></a>
+            <a href="products"><button class="red-btn">Pogledaj proizvode</button></a>
         </div>
     </div>
 </section>

@@ -96,6 +96,7 @@ $(".language").click(function () {
   }
 });
 
+
 $(".language-option").click(function () {
   var newLanguage = $(this).text();
 
@@ -137,3 +138,11 @@ $('input:radio[name="paying-method"]').change(function () {
     }, 400);
   }
 });
+
+
+$(".color-holder").click(function(){
+  if(!$(this).hasClass("active")){
+    $(".color-holder").removeClass("active")
+    $(this).addClass("active")
+  }
+})

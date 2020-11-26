@@ -7,7 +7,7 @@
             </div>
             <div class="red-line"></div>
             <div class="medium-txt">Pratite svoju strast, uspeh će vas platiti.</div>
-            <a><button class="red-btn">Kontaktirajte nas</button></a>
+            <a href="contact"><button class="red-btn">Kontaktirajte nas</button></a>
         </div>
     </div>
 </section>

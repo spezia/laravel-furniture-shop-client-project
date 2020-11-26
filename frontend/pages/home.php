@@ -16,7 +16,7 @@
                         </div>
                         <div class="red-line"></div>
                         <div class="medium-txt">Jednostavne i minimalističke nijanse</div>
-                        <a><button class="red-btn">Saznaj Više</button></a>
+                        <a href="products"><button class="red-btn">Saznaj Više</button></a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="red-line"></div>
                         <div class="medium-txt">Jednostavne i minimalističke nijanse</div>
-                        <a><button class="red-btn">Saznaj Više</button></a>
+                        <a href="products"><button class="red-btn">Saznaj Više</button></a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="red-line"></div>
                         <div class="medium-txt">Jednostavne i minimalističke nijanse</div>
-                        <a><button class="red-btn">Saznaj Više</button></a>
+                        <a href="products"><button class="red-btn">Saznaj Više</button></a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
             <div>
                 <h2>Luksuzne kuhinje</h2>
                 <div class="medium-txt">Elegantnost i toplina</div>
-                <a><button class="red-btn">Saznaj Više</button></a>
+                <a href="products"><button class="red-btn">Saznaj Više</button></a>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
             <div>
                 <h2>Udobne spavaće sobe</h2>
                 <div class="medium-txt">Spavajte na oblaku</div>
-                <a><button class="red-btn">Saznaj Više</button></a>
+                <a href="products"><button class="red-btn">Saznaj Više</button></a>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
             <div>
                 <h2>Dečije sobe</h2>
                 <div class="medium-txt">Boje diznilenda</div>
-                <a><button class="red-btn">Saznaj Više</button></a>
+                <a href="products"><button class="red-btn">Saznaj Više</button></a>
             </div>
         </div>
     </div>
@@ -347,7 +347,7 @@
                 Pored široke palete naših gotovih proizvoda, bavimo se<br class="d-none d-sm-block" />
                 izradom nameštaj koji ima mere samo iz Vašeg kutka.
             </div>
-            <a><button class="red-btn" data-aos="fade-up" data-aos-duration="500">Kontaktiraj nas</button></a>
+            <a href="contact"><button class="red-btn" data-aos="fade-up" data-aos-duration="500">Kontaktiraj nas</button></a>
         </div>
     </div>
 </section>
@@ -533,10 +533,10 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <button class="red-btn">Saznaj više</button>
+                <a href="impressions"><button class="red-btn">Saznaj više</button></a>
             </div>
             <div class="home-card">
-                <h2 data-aos="fade-up" data-aos-duration="500">Utisci zadovoljnih kupaca</h2>
+                <h2 data-aos="fade-up" data-aos-duration="500">O nama</h2>
                 <div class="red-line" data-aos="fade-up" data-aos-duration="500"></div>
 
                 <div class="card-about-txt" data-aos="fade-up" data-aos-duration="500">
@@ -545,7 +545,7 @@
                     hendrerit mi. Donec ullamcorper malesuada ante, non condimentum velit tristique ac. Orci varius
                     natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                 </div>
-                <button class="red-btn">Saznaj više</button>
+                <a href="about"><button class="red-btn">Saznaj više</button></a>
 
             </div>
 

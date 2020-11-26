@@ -449,8 +449,12 @@ button {
 
 .new-product-holder {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 12px;
+
+    @media(min-width: $sm) {
+        justify-content: space-between;
+    }
 }
 
 .new-product {
@@ -976,7 +980,7 @@ button {
     box-shadow: 0 0 10px rgb(165, 165, 165);
     padding: 20px;
     position: relative;
-    margin: 15px 0;
+    margin: 15px auto;
 
     @media(min-width: $sm) {
         width: 252px;
@@ -1520,6 +1524,11 @@ button {
     font-size: 24px;
     color: $blackColor;
     font-family: $fontSemibold;
+    text-align: center;
+
+    @media(min-width: $sm) {
+        text-align: left;
+    }
 }
 
 .product-code {
@@ -1527,17 +1536,54 @@ button {
     font-size: 12px;
     color: #BDBDBD;
     margin-bottom: 35px;
+    text-align: center;
+
+    @media(min-width: $sm) {
+        text-align: left;
+    }
 }
 
 .product-info {
-    display: flex;
     margin-bottom: 50px;
+
+    @media(min-width: $lg) {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media(min-width: $lg) {
+        justify-content: flex-start;
+    }
+}
+
+
+.fancybox-content {
+    text-align: center;
+}
+
+.fancybox-image {
+    width: auto;
+    position: relative;
 }
 
 .product-details {
     width: 225px;
-    padding: 25px 60px 25px 0;
-    border-right: 1px solid $redColor;
+    margin: 0 auto;
+
+
+    @media(min-width: $sm) {
+        padding: 25px 60px 25px 0;
+        border-right: 1px solid $redColor;
+        margin: 0;
+    }
+
+    @media(min-width: $lg) {
+        padding: 25px 25px 25px 0;
+    }
+
+    @media(min-width: $xl) {
+        padding: 25px 60px 25px 0;
+    }
 }
 
 .product-dimension {
@@ -1559,7 +1605,19 @@ button {
 }
 
 .product-colors {
-    padding-left: 60px;
+
+    @media(min-width: $sm) {
+        padding-left: 60px;
+    }
+
+
+    @media(min-width: $lg) {
+        padding-left: 25px;
+    }
+
+    @media(min-width: $xl) {
+        padding-left: 60px;
+    }
 }
 
 .color-title {
@@ -1567,10 +1625,20 @@ button {
     font-size: 16px;
     color: $blackColor;
     margin-bottom: 20px;
+    text-align: center;
+
+    @media(min-width: $sm) {
+        text-align: left;
+    }
 }
 
 .colors-holder {
     display: flex;
+    justify-content: center;
+
+    @media(min-width: $sm) {
+        justify-content: flex-start;
+    }
 }
 
 .color-holder {
@@ -1578,6 +1646,22 @@ button {
     cursor: pointer;
 
     &:hover {
+        .color-name {
+            opacity: 1;
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.active {
+        .color {
+            border: 2px solid $whiteColor;
+            outline: 2px solid $redColor;
+            outline-offset: 0px;
+        }
+
         .color-name {
             opacity: 1;
         }
@@ -1618,6 +1702,11 @@ button {
     color: #BDBDBD;
     align-items: center;
     margin-bottom: 30px;
+    justify-content: center;
+
+    @media(min-width: $lg) {
+        justify-content: flex-start;
+    }
 
     .discount-tag {
         margin-right: 20px;
@@ -1628,6 +1717,11 @@ button {
     display: flex;
     align-items: center;
     margin-bottom: 50px;
+    justify-content: center;
+
+    @media(min-width: $lg) {
+        justify-content: flex-start;
+    }
 
     .old-price {
         padding-left: 30px;
@@ -1637,15 +1731,68 @@ button {
 
 .current-price {
     font-family: $fontExtrabold;
-    font-size: 36px;
+    font-size: 27px;
     color: $redColor;
     padding-right: 30px;
+
+    @media(min-width: $sm) {
+        font-size: 36px;
+    }
 }
 
 
 .product-buy {
-    display: flex;
-    justify-content: space-between;
+
+
+    @media(min-width: $sm) {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    @media(min-width: $lg) {
+        justify-content: space-between;
+    }
+
+    .product-number {
+        width: 325px;
+        height: 36px;
+        margin: 0 auto 10px;
+
+        @media(min-width: $sm) {
+            width: 245px;
+            height: 36px;
+            margin-bottom: 0;
+        }
+
+        @media(min-width: $md) {
+            width: 245px;
+            height: 36px;
+        }
+
+        @media(min-width: $lg) {
+            width: 220px;
+            height: 36px;
+        }
+
+        @media(min-width: $xl) {
+            width: 270px;
+            height: 48px;
+        }
+
+        @media(min-width: $xxl) {
+            width: 330px;
+            height: 48px;
+        }
+    }
+
+}
+
+.imglist {
+    margin-bottom: 20px;
+
+    @media(min-width: $lg) {
+        margin-bottom: 0;
+    }
 }
 
 .product-number {
@@ -1726,12 +1873,34 @@ button {
 }
 
 .cart-buttons {
-    width: 330px;
+    width: 325px;
+    margin: 0 auto;
+
+    @media(min-width: $sm) {
+        width: 245px;
+        margin: 0;
+    }
+
+    @media(min-width: $md) {
+        width: 245px;
+    }
+
+    @media(min-width: $lg) {
+        width: 220px;
+    }
+
+    @media(min-width: $xl) {
+        width: 270px;
+    }
+
+    @media(min-width: $xxl) {
+        width: 330px;
+    }
 }
 
 .to-cart {
     width: 100%;
-    height: 48px;
+    height: 36px;
     background-color: $redColor;
     border: none;
     border-radius: 24px;
@@ -1740,6 +1909,22 @@ button {
     color: $whiteColor;
     margin-bottom: 10px;
     @include transition(ease .2s);
+
+    @media(min-width: $sm) {
+        height: 48px;
+    }
+
+    @media(min-width: $md) {
+        height: 48px;
+    }
+
+    @media(min-width: $lg) {
+        height: 36px;
+    }
+
+    @media(min-width: $xl) {
+        height: 48px;
+    }
 
     &:focus {
         outline: none;
@@ -1762,11 +1947,16 @@ button {
 }
 
 .thumb {
-    width: 100px;
-    height: 110px;
+    width: 80px;
+    height: 80px;
     margin-right: 20px;
     margin-top: 20px;
     display: block;
+
+    @media(min-width: $sm) {
+        width: 100px;
+        height: 110px;
+    }
 
     img {
 
@@ -2476,5 +2666,57 @@ button {
 
     td:nth-of-type(4):before {
         content: "Ukupno";
+    }
+}
+
+
+.has-dropdown {
+    position: relative;
+
+    &:hover {
+        .categories-dropdown {
+            display: block;
+        }
+    }
+}
+
+.categories-dropdown {
+    padding-right: 40px;
+    background-color: white;
+    text-align: right;
+    width: 200px;
+    margin-left: auto;
+
+    @media(min-width: $lg) {
+        display: none;
+        padding: 10px 15px;
+        -webkit-box-shadow: 0 0 10px #a5a5a5;
+        box-shadow: 0 0 10px #a5a5a5;
+        position: absolute;
+        background-color: white;
+        z-index: 10;
+        text-align: left;
+        width: 200px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                font-family: $fontRegular;
+                font-size: 16px;
+                color: $blackColor;
+
+                &:hover{
+                    text-decoration: none;
+                    color: $redColor
+                }
+            }
+        }
     }
 }

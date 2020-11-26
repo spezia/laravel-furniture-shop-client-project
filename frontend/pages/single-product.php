@@ -3,10 +3,8 @@
         <div class="breadcrumb"><a>Početna</a>/<a>Kategorija</a>/<a>Proizvodi</a>/<span>Naziv Proizvoda</span></div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div data-aos="fade-up" data-aos-duration="500">
-
-                    <!-- ovde ide galerija -->
 
 
                     <div class="imglist">
@@ -43,11 +41,9 @@
                     </div>
 
 
-                    <!-- ovde ide galerija -->
-
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
                 <div data-aos="fade-up" data-aos-duration="500" class="product-title">Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit.</div>
                 <div data-aos="fade-up" data-aos-duration="500" class="product-code">ŠIFRA ARTIKLA: 11008741</div>
@@ -72,7 +68,7 @@
                         <div class="color-title">Dezen</div>
 
                         <div class="colors-holder">
-                            <div class="color-holder">
+                            <div class="color-holder active">
                                 <div class="color brown"></div>
                                 <div class="color-name">Braon</div>
                             </div>
@@ -154,7 +150,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -170,7 +166,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -186,7 +182,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -208,7 +204,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -240,7 +236,7 @@
                                 <div class="product-price">RSD 15.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-3.jpg" alt="product image" />
 
@@ -256,7 +252,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
@@ -278,7 +274,7 @@
                 <div class="carousel-item">
 
                     <div class="new-product-holder">
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-1.jpg" alt="product image" />
 
@@ -294,7 +290,7 @@
                                 <div class="product-price">RSD 10.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-2.jpg" alt="product image" />
 
@@ -326,7 +322,7 @@
                                 <div class="product-price">RSD 75.000</div>
                             </div>
                         </div>
-                        <div class="new-product">
+                        <div class="new-product d-none d-sm-block">
                             <div class="new-product-top">
                                 <img src="assets/dist/img/home/product-4.jpg" alt="product image" />
 
