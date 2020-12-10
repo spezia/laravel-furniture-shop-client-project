@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/admin/home',
 
     'logout_url' => 'logout',
 
@@ -240,17 +240,17 @@ return [
         'Management',
         [
             'text' => 'Pages',
-            'url'  => 'pages',
+            'url'  => '/admin/pages',
             'icon' => 'fas fa-globe-europe',
         ],
         [
             'text' => 'Categories',
-            'url'  => 'categories',
+            'url'  => '/admin/categories',
             'icon' => 'fas fa-book',
         ],
         [
             'text' => 'Products',
-            'url'  => 'products',
+            'url'  => '/admin/products',
             'icon' => 'fas fa-th-list',
         ],
         // [
@@ -261,7 +261,7 @@ return [
         'Users',
         [
             'text' => 'Reviews',
-            'url'  => 'reviews',
+            'url'  => '/admin/reviews',
             'icon' => 'fas fa-users',
         ],
         // [

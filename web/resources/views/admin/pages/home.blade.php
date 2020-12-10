@@ -2,7 +2,7 @@
 
 @section('content')
     @include('shared.search')
-    @include('shared.messages')
+    <x-messages/>
     <!-- Main content -->
     <section class="content">
         <!-- Info boxes -->

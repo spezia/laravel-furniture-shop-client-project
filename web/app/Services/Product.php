@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Product as ModelProduct;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Repository\ProductRepository;
+use Illuminate\Database\Eloquent\Collection;
 use RuntimeException;
 
 /**
@@ -33,6 +34,16 @@ class Product
     public function getAll(): LengthAwarePaginator
     {
         return $this->productRepository->fetchAll();
+    }
+
+    /**
+     * Fetch 6 latest products
+     *
+     * @return Collection
+     */
+    public function getLatestProducts(): Collection
+    {
+        return $this->productRepository->getLatestProducts();
     }
 
     /**

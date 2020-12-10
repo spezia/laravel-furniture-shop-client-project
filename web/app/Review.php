@@ -17,14 +17,16 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'product_id', 'name', 'email', 'status', 'comment'
+        'product', 'firstname', 'lastname',
+        'email', 'status', 'message'
     ];
 
     /**
      * @var array
      */
     protected $visible = [
-        'id',  'product', 'name', 'email', 'status', 'comment'
+        'id',  'product', 'firstname', 'lastname',
+        'email', 'status', 'message'
     ];
 
     /**

@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\PageController as FrontPageController;
+use App\Http\Controllers\Front\ProductController as FrontProductController;
 use App\Http\Controllers\Front\ReviewController;
 
 /*
@@ -16,7 +18,7 @@ use App\Http\Controllers\Front\ReviewController;
  |--------------------------------------------------------------------------
  */
 
-Route::middleware(['auth'])->namespace('Admin')->prefix('admin')->group(function () {
+Route::middleware(['auth', 'web'])->namespace('Admin')->prefix('admin')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     // Pages
@@ -47,7 +49,7 @@ Route::middleware(['auth'])->namespace('Admin')->prefix('admin')->group(function
     Route::delete('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::delete('/products/{product}/image/{image}', [ProductController::class, 'destroyImage'])->name('products.remove.image');
 
-    // Product
+    // Reviews
     Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
     Route::get('/reviews/{review}  ', [AdminReviewController::class, 'show'])->name('reviews.show');
     Route::get('/reviews/{review}/edit', [AdminReviewController::class, 'edit'])->name('reviews.edit');
@@ -61,32 +63,57 @@ Route::middleware(['auth'])->namespace('Admin')->prefix('admin')->group(function
  |--------------------------------------------------------------------------
  | @link https://laraveldaily.com/multi-language-routes-and-locales-with-auth/
  */
-// to redirect the user from non-localed homepage to /en/ homepage
-Route::get('/', function () {
-    return redirect(app()->getLocale());
-});
+// for same reason we session does not work and we must set locale here again because
+// of translating route params like 'about', 'contact'...
+app()->setLocale(request()->segment(1, config('app.locale')));
+Route::group(['middleware' => ['web']], function () {
 
-// keep only login/logout
-Auth::routes([
-    'register' => false,
-    'reset' => false,
-    'confirm' => false,
-    'verify' => false,
-]);
+    // to redirect the user from non-localed homepage to /en/ homepage
+    Route::get('/', function () {
+        return redirect(app()->getLocale());
+    });
 
-Route::group([
-    'prefix' => '{locale}',
-    'where' => ['locale' => '[a-zA-Z]{2}'],
-    'middleware' => 'setlocale'
-], function () {
+    // keep only login/logout
+    Auth::routes([
+        'register' => false,
+        'reset' => false,
+        'confirm' => false,
+        'verify' => false,
+    ]);
+    // lang switcher 
+    Route::get('set-locale/{lang}', function ($lang) {
+        app()->setLocale($lang);
 
-    // Pages
-    Route::get('/', [FrontPageController::class, 'home'])->name('pages.front.home');
-    Route::get('/{slug}', [FrontPageController::class, 'show'])->name('pages.front.show');
+        return redirect()->route('pages.front.home', $lang);
+    })->name('locale.setting');
 
-    Route::post('/product/{id}/review', [ReviewController::class, 'store'])->name('reviews.store');
+    // Contact
+    Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+    // Review
+    Route::post('/reviews/store', [ReviewController::class, 'store'])->name('reviews.store');
 
-    // Route::get('/', function () {
-    //     return view('welcome');
-    // });
+    Route::group([
+        'prefix' => '{locale}',
+        'where' => ['locale' => '[a-zA-Z]{2}'],
+        'middleware' => ['setlocale', 'web']
+    ], function () {
+
+        // Pages
+        Route::get('/', [FrontPageController::class, 'home'])->name('pages.front.home');
+
+        // show directly templates
+        Route::view(trans('routes.about'), 'front.pages.about')->name('page.about');
+        Route::view(trans('routes.impressions'), 'front.pages.impressions')->name('page.impressions');
+        Route::view(trans('routes.contact'), 'front.pages.contact')->name('page.contact');
+
+        //@TODO kako znamo kada je categories a kada products ? ovo definisati i proveriti da li se preklapaju uri ruta!!!
+
+
+        // Products
+        Route::get('/' . trans('routes.products'), [FrontPageController::class, 'home'])->name('products.front.home');
+        Route::get('/' . trans('routes.products') . '/{slug}  ', [FrontProductController::class, 'show'])->name('products.front.show');
+
+        // Categories
+        Route::get('/' . trans('routes.categories') . '/{slug}', [FrontPageController::class, 'home'])->name('categories.show');
+    });
 });

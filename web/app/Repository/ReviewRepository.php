@@ -54,7 +54,11 @@ class ReviewRepository
      */
     public function create(array $data): Review
     {
-        return Review::create($data);
+        $model = new Review();
+        $model->fill($data);
+        $model->save();
+
+        return $model;
     }
 
     /**

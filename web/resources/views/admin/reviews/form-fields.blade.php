@@ -1,8 +1,16 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label>{{ __('Name') }}</label>
-            <input id="name" type="text" value="{{ old('name', $review->name) }}" name="name" class="form-control" {{ isset($isView)? "disabled" : '' }}>
+            <label>{{ __('Firstname') }}</label>
+            <input id="firstname" type="text" value="{{ old('firstname', $review->firstname) }}" name="firstname" class="form-control" {{ isset($isView)? "disabled" : '' }}>
+        </div>
+        <div class="form-group">
+            <label>{{ __('Lastname') }}</label>
+            <input id="lastname" type="text" value="{{ old('lastname', $review->lastname) }}" name="lastname" class="form-control" {{ isset($isView)? "disabled" : '' }}>
+        </div>
+        <div class="form-group">
+            <label>{{ __('Product') }}</label>
+            <input id="product" type="text" value="{{ old('product', $review->product) }}" name="product" class="form-control" {{ isset($isView)? "disabled" : '' }}>
         </div>
         <div class="form-group">
             <label>{{ __('Email') }}</label>
@@ -10,7 +18,7 @@
         </div>
         <div class="form-group">
             <label>{{ __('Comment') }}</label><br/>
-            <textarea name="comment" class="form-control" {{ isset($isView)? "disabled" : '' }}>{{ old('comment', $review->comment) }}</textarea>
+            <textarea name="message" class="form-control" {{ isset($isView)? "disabled" : '' }}>{{ old('message', $review->message) }}</textarea>
         </div>
 
         <div class="form-group">

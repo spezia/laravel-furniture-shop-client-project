@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\URL;
 use Closure;
 
 class SetLocale
@@ -16,21 +17,19 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-        $localeFromUrl = $request->segment(1);  // for example: en, fr, de..
-
-        // no locales in url than use default
-        if (!$localeFromUrl) {
-            $localeFromUrl = config('app.locale');
-        }
+        $locale = $request->segment(1, config('app.locale'));  // for example: en, fr, de..
 
         // not allowed locale in url?
-        if (!in_array($localeFromUrl, config('app.locales'))) {
+        if (!in_array($locale, config('app.locales'))) {
             abort(Response::HTTP_NOT_FOUND);
         }
 
-        app()->setLocale($localeFromUrl);
+        app()->setLocale($locale);
 
-        $request->route()->forgetParameter('locale'); // remove lang param in controller
+        // remove lang param in controller
+        $request->route()->forgetParameter('locale');
+        // add route def value for locale to avoid defining locale in blade route param
+        URL::defaults(['locale' => $locale]);
 
         return $next($request);
     }

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Product;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
@@ -17,7 +18,17 @@ class ProductRepository
      */
     public function fetchAll(): LengthAwarePaginator
     {
-        return Product::paginate(\config('custom.products.show_per_product'));
+        return Product::paginate(\config('custom.pages.show_per_page'));
+    }
+
+    /**
+     * Fetch latest products
+     *
+     * @return Collection
+     */
+    public function getLatestProducts(): Collection
+    {
+        return Product::latest()->take(\config('custom.pages.latest'))->get();
     }
 
     /**

@@ -42,12 +42,9 @@ class Review
      *
      * @return AppReview
      */
-    public function create(Product $product, array $data): AppReview
+    public function create(array $data): AppReview
     {
-        $forInsert = $this->matchInputModelValues($data);
-        $forInsert['product_id'] = $product->id;
-
-        return $this->reviewRepository->create($forInsert);
+        return $this->reviewRepository->create($data);
     }
 
     /**
@@ -59,10 +56,10 @@ class Review
      */
     public function update(AppReview $review, array $data): AppReview
     {
-        $forUpdate = $this->matchInputModelValues($data);
-        $forUpdate['status'] = $data['status'];
+        // $forUpdate = $this->matchInputModelValues($data);
+        // $forUpdate['status'] = $data['status'];
 
-        if (!$this->reviewRepository->update($review, $forUpdate)) {
+        if (!$this->reviewRepository->update($review, $data)) {
             throw new RuntimeException('Review has not been updated.');
         }
 
@@ -89,20 +86,5 @@ class Review
     public function fetchBySlug(?string $slug): ?AppReview
     {
         return $this->reviewRepository->findBySlug($slug);
-    }
-
-    /**
-     *
-     * @param  array $data
-     *
-     * @return array
-     */
-    private function matchInputModelValues(array $data): array
-    {
-        return [
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'comment' => $data['comment'],
-        ];
     }
 }

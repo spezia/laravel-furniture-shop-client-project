@@ -7,36 +7,34 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Konstantin home') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/index.min.css') }}" rel="stylesheet">
 
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <x-header/>
     <div id="app">
-        @include('shared.headerfront')
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <x-footer/>
 
 @section('javascript')
-     <!-- jQuery 3 -->
-     {{-- <script src="{{ asset('js/components/jquery/dist/jquery.min.js') }}"></script> --}}
-     <script src="{{ asset('js/components/jquery.min.js') }}"></script>
-     <!-- Bootstrap 3.3.7 -->
-     {{-- <script src="{{ asset('js/components/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
-     <script src="{{ asset('js/components/bootstrap.min.js') }}"></script>
- 
-     <!-- Custom scripts -->
-     <script src="{{ asset('js/scripts.js') }}"></script>
+     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+     <script src="{{ asset('js/tether.min.js') }}"></script>
+     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
+     <script src="{{ asset('js/script.js') }}"></script>
+     <script src="{{ asset('js/app.js') }}"></script>
      <script>
          $.ajaxSetup({
              headers: {

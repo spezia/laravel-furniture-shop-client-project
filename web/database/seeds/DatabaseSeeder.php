@@ -1,5 +1,6 @@
 <?php
 
+use Database\Seeders\MediaSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(MediaSeeder::class); // has to be first -> remove all files from disk
         $this->call(UsersTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
         $this->call(ProductTableSeeder::class);

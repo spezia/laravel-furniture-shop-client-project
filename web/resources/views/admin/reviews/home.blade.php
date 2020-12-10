@@ -2,7 +2,7 @@
 
 @section('content')
     @include('shared.search')
-    @include('shared.messages')
+    <x-messages/>
     <!-- Main content -->
     <section class="content">
         <!-- Info boxes -->
@@ -17,7 +17,8 @@
                         <table class="table table-bordered table-striped">
                             <tbody>
                             <tr>
-                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('Firstname') }}</th>
+                                <th>{{ __('Lastname') }}</th>
                                 <th>{{ __('Email') }}</th>
                                 <th>{{ __('Product') }}</th>
                                 <th>{{ __('Status') }}</th>
@@ -26,9 +27,10 @@
                             @if (count($data))
                                 @foreach ($data as $item)
                                     <tr>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->firstname }}</td>
+                                        <td>{{ $item->lastname }}</td>
                                         <td>{{ $item->email }}</td>
-                                        <td>{{ $item->product->name }}</td>
+                                        <td>{{ $item->product }}</td>
                                         <td>
                                             @if($item->status == $accepted) 
                                                 <span class="label label-success">{{ __(preg_replace('/_/', ' ', $accepted)) }}</span> 

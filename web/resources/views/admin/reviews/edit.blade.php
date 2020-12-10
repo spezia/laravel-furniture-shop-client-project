@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('shared.messages')
+    <x-messages/>
 
     <!-- Main content -->
     <section class="content">

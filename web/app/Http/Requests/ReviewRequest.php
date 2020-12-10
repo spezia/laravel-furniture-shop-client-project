@@ -24,9 +24,11 @@ class ReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:2',
+            'firstname' => 'required|min:2',
+            'lastname' => 'required|min:2',
+            'product' => 'required|min:2',
             'email' => 'required|email',
-            'comment' => 'required|min:2',
+            'message' => 'required|min:2',
         ];
     }
 }

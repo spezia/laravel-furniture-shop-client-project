@@ -48,13 +48,25 @@ class Product extends Model implements HasMedia
         $this->addMediaCollection(\config('custom.media.product'))
             ->useDisk(\config('custom.media.product'))
             ->registerMediaConversions(function (Media $media) {
-                $this
-                    ->addMediaConversion('thumb')
+                $this->addMediaConversion('thumb')
                     ->width(100)
                     ->height(100);
             });
     }
 
+    /**
+     * Use image from collection
+     *
+     * @param boolean $thumb
+     * 
+     * @return string
+     */
+    public function fetchSingleImage($thumb = false): string
+    {
+        $media = $this->getMedia(\config('custom.media.product'))->first();
+
+        return $thumb ? $media->getUrl('thumb') : $media->getUrl();
+    }
 
     /**
      * Relationship to category model

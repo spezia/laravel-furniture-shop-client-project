@@ -41,6 +41,16 @@ class Category
      *
      * @return Collection
      */
+    public function getListActiveCategories(): Collection
+    {
+        return $this->categoryRepository->fetchActiveListCategories();
+    }
+
+    /**
+     * Get All Categories
+     *
+     * @return Collection
+     */
     public function getListCategories(): Collection
     {
         return $this->categoryRepository->fetchListCategories();

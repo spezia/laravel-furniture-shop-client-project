@@ -4,16 +4,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Language Lines
+    | Custom Language Lines
     |--------------------------------------------------------------------------
-    |
-    | The following language lines are the default lines which match reasons
-    | that are given by the password broker for a password update attempt
-    | has failed, such as for an invalid token or invalid new password.
-    |
     */
 
     'error' => 'Somthing goes wrong!',
     'reviewok' => 'Review has been sent!',
+    'aboutus' => 'About Us',
+    'products' => 'Products',
+    'home' => 'Home',
+    'contact' => 'Contact',
+    'impressions' => 'Impressions',
 
 ];

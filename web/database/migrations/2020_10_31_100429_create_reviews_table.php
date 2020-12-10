@@ -16,15 +16,14 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('product_id');
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email');
-            $table->text('comment');
+            $table->string('product');
+            $table->text('message');
             $table->enum('status', [Review::STATUS_IN_REVIEW, Review::STATUS_ACCEPTED]);
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

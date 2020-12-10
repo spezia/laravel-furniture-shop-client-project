@@ -32,6 +32,16 @@ class CategoryRepository
     }
 
     /**
+     * Return all active categories
+     *
+     * @return Collection
+     */
+    public function fetchActiveListCategories(): Collection
+    {
+        return Category::select(['id', 'name', 'slug'])->where('is_enabled', true)->get();
+    }
+
+    /**
      * Get Category by id.
      * 
      * @param int $categoryId
