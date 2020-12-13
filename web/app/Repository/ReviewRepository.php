@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Product;
 use App\Review;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
@@ -19,6 +20,19 @@ class ReviewRepository
     public function fetchAll(): LengthAwarePaginator
     {
         return Review::paginate(\config('custom.reviews.show_per_review'));
+    }
+
+    /**
+     * Fetch enabled reviews
+     *
+     * @return Collection
+     */
+    public function reviewsLatest(): Collection
+    {
+        return Review::where('status', Review::STATUS_ACCEPTED)
+            ->take(10)
+            ->latest()
+            ->get();
     }
 
     /**

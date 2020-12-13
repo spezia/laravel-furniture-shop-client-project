@@ -8,7 +8,7 @@ return [
     */
     'pages' => [
         'show_per_page' => 20,
-        'latest' => 6,
+        'latest' => 8,
     ],
 
     'currency' => 'chf',

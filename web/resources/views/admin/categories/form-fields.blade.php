@@ -11,8 +11,12 @@
         @foreach (config('app.locales') as $locale)  
             <div class="tab-pane fade  {{ $locale == 'en'? 'show active' : '' }} orm-group" id="{{ $locale }}" role="tabpanel" aria-labelledby="{{ $locale }}-tab">
                 <div class="form-group">
-                    <label for="name">{{ __('Title') }}</label>
+                    <label for="name">{{ __('Name') }}</label>
                     <input id="{{ $locale }}-name" type="text" class="form-control" name="name[{{ $locale }}]" value="{{ $category? old('name.'.$locale, $category->getTranslation('name', $locale)) : old('name.'.$locale) }}" {{ isset($isView)? "disabled" : '' }}/>
+                </div>
+                <div class="form-group">
+                    <label for="description">{{ __('Description') }}</label>
+                    <textarea id="{{ $locale }}-description" type="text" class="form-control" name="description[{{ $locale }}]" {{ isset($isView)? "disabled" : '' }}>{{ $category? old('description.'.$locale, $category->getTranslation('description', $locale)) : old('description.'.$locale) }}</textarea>
                 </div>
             </div>
         @endforeach    

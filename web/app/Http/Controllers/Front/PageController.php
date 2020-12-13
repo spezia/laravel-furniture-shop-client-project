@@ -3,17 +3,26 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Response;
+use App\Services\Category;
+use App\Services\Review;
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
     /**
-     * Display a Home page.
+     * Show Home page
      *
-     * @return Response
+     * @param Category $service
+     * @param Review $reviewService
+     * 
+     * @return View
      */
-    public function home()
+    public function home(Category $service, Review $reviewService): View
     {
-        return view('front.pages.home');
+        return view('front.pages.home', [
+            'categoriesFirst' => $service->categoriesByOrder('asc'),
+            'categoriesLast' => $service->categoriesByOrder('desc'),
+            'reviews' => $reviewService->getLatestReviews(),
+        ]);
     }
 }

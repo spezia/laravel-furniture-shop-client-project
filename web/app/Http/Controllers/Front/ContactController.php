@@ -26,6 +26,6 @@ class ContactController extends Controller
         // send email to admin
         $emailService->sendContactFormToAdmin($request->only('name', 'email', 'message', 'phone'));
 
-        return back()->withInput()->with('msg', 'Email has been sent.');
+        return back()->withInput()->with('msg', __('Email has been sent.'));
     }
 }

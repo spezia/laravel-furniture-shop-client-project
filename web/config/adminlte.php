@@ -238,11 +238,11 @@ return [
             'topnav' => false, // hide by default
         ],
         'Management',
-        [
-            'text' => 'Pages',
-            'url'  => '/admin/pages',
-            'icon' => 'fas fa-globe-europe',
-        ],
+        // [
+        //     'text' => 'Pages',
+        //     'url'  => '/admin/pages',
+        //     'icon' => 'fas fa-globe-europe',
+        // ],
         [
             'text' => 'Categories',
             'url'  => '/admin/categories',
@@ -251,6 +251,11 @@ return [
         [
             'text' => 'Products',
             'url'  => '/admin/products',
+            'icon' => 'fas fa-th-list',
+        ],
+        [
+            'text' => 'Product Discounts',
+            'url'  => '/admin/product-discounts',
             'icon' => 'fas fa-th-list',
         ],
         // [

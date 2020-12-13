@@ -58,6 +58,17 @@ class Category
 
     /**
      *
+     * @param string|null $order
+     * 
+     * @return Collection
+     */
+    public function categoriesByOrder(string $order = null): Collection
+    {
+        return $this->categoryRepository->getCategoriesByOrder($order);
+    }
+
+    /**
+     *
      * @param array $data
      *
      * @return ModelCategory
@@ -123,6 +134,7 @@ class Category
     {
         return [
             'name' => $data['name'],
+            'description' => $data['description'],
             'is_enabled' => isset($data['is_enabled']) ? true : false,
         ];
     }

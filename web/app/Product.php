@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -71,7 +72,7 @@ class Product extends Model implements HasMedia
     /**
      * Relationship to category model
      */
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
@@ -82,5 +83,13 @@ class Product extends Model implements HasMedia
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    /**
+     * Relationship to discount model
+     */
+    public function discounts(): HasMany
+    {
+        return $this->hasMany(ProductDiscount::class);
     }
 }

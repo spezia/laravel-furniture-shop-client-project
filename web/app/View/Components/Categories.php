@@ -17,6 +17,8 @@ class Categories extends Component
 
     /**
      * Create a new component instance.
+     * 
+     * @param Category $categoryService
      *
      * @return void
      */

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('Home'))
+@section('title', __('About'))
 
 @section('content')
 <section class="background-image bcg-1">
@@ -86,11 +86,6 @@
     </div>
 </section>
 
-<section>
-    <h1 data-aos="fade-up" data-aos-duration="500">Naše reference</h1>
-    <div data-aos="fade-up" data-aos-duration="500" class="red-line"></div>
-    <x-latest-products :row="2"/>
-
-</section>
+<x-reference-product/>
 <!-- /.content -->
 @endsection

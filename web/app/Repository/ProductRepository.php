@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Product;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -22,13 +23,48 @@ class ProductRepository
     }
 
     /**
-     * Fetch latest products
+     * Fetch enabled products
+     *
+     * @return Collection
+     */
+    public function getAllEnabled(): Collection
+    {
+        return Product::where('is_enabled', true)->get();
+    }
+
+    /**
+     * Fetch latest products (front page)
      *
      * @return Collection
      */
     public function getLatestProducts(): Collection
     {
-        return Product::latest()->take(\config('custom.pages.latest'))->get();
+        return Product::where('is_enabled', true)
+            ->latest()
+            ->take(\config('custom.pages.latest'))
+            ->get();
+    }
+
+    /**
+     * Fetch products with active discounts (front page)
+     * 
+     * @param Carbon $date
+     *
+     * @return Collection
+     */
+    public function getWithDiscounts(Carbon $date): Collection
+    {
+        return Product::where('is_enabled', true)
+            ->whereHas('discounts', function ($query) use ($date) {
+                $query->where('from', '<=', $date)
+                    ->where('to', '>=', $date);
+            })
+            ->with(['discounts' => function ($query) use ($date) {
+                $query->where('from', '<=', $date)
+                    ->where('to', '>=', $date);
+            }])
+            ->orderBy('id', 'desc')
+            ->get();
     }
 
     /**
@@ -51,7 +87,9 @@ class ProductRepository
      */
     public function findBySlug(?string $slug): ?Product
     {
-        return Product::where('slug->' . app()->getLocale(), $slug)->where('is_enabled', true)->first();
+        return Product::where('slug->' . app()->getLocale(), $slug)
+            ->where('is_enabled', true)
+            ->first();
     }
 
     /**

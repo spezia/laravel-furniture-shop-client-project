@@ -16,6 +16,8 @@ class LatestProducts extends Component
 
     /**
      * Create a new component instance.
+     * 
+     * @param Product $service
      *
      * @return void
      */

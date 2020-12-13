@@ -4,6 +4,13 @@ $(function () {
     $('.js-review-response').hide();
     $('.js-review-error-response').hide();
 
+    $('body').on('focus', ".date", function () {
+        $(this).datepicker({
+            format: 'dd.mm.yyyy',
+            autoclose: true,
+        });
+    });
+
     $('#delete-entity').on('show.bs.modal', function (e) {
         //populate the form action
         $('#modal-question').html($(e.relatedTarget).data('question'));
@@ -51,6 +58,7 @@ $(function () {
                 if (response.status == 1) {
                     $('.js-review-response').html(response.msg).show();
                     $('.js-review-error-response').hide();
+                    $("#reviewform").trigger('reset');
                 } else {
                     $('.js-review-error-response').html(response.msg).show();
                     $('.js-review-response').hide();

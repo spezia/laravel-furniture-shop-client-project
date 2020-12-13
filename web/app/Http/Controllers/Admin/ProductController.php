@@ -119,7 +119,7 @@ class ProductController extends Controller
             return back()->withInput()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('products.index')->with('message', 'Product has been updated successfully.');
+        return redirect()->route('products.edit', ['product' => $product->id])->with('message', 'Product has been updated successfully.');
     }
 
     /**

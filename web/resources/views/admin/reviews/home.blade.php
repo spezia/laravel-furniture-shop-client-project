@@ -57,7 +57,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="4">{{ __('No active reviews') }}</td>
+                                    <td colspan="6">{{ __('No active reviews') }}</td>
                                 </tr>
                             @endif
                             </tbody>

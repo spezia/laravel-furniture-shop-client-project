@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('Home'))
+@section('title', __('Contact'))
 
 @section('content')
 <section class="background-image contact-bcg">

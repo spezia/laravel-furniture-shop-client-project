@@ -32,6 +32,21 @@ class CategoryRepository
     }
 
     /**
+     * Fetch 3 items for front home page sliders
+     *
+     * @param string $orderBy
+     * 
+     * @return Collection
+     */
+    public function getCategoriesByOrder(string $orderBy = 'asc'): Collection
+    {
+        return Category::where('is_enabled', true)
+            ->orderBy('id', $orderBy)
+            ->take(3)
+            ->get();
+    }
+
+    /**
      * Return all active categories
      *
      * @return Collection

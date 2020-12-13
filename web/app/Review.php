@@ -39,6 +39,15 @@ class Review extends Model
     }
 
     /**
+     *
+     * @return string
+     */
+    public function getNameAttribute(): string
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
+    /**
      * Relationship to restaurant model
      */
     public function product(): BelongsTo

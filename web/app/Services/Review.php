@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\Product;
 use App\Repository\ReviewRepository;
 use App\Review as AppReview;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use RuntimeException;
 
@@ -38,6 +38,15 @@ class Review
 
     /**
      *
+     * @return Collection
+     */
+    public function getLatestReviews(): Collection
+    {
+        return $this->reviewRepository->reviewsLatest();
+    }
+
+    /**
+     *
      * @param array $data
      *
      * @return AppReview
@@ -56,9 +65,6 @@ class Review
      */
     public function update(AppReview $review, array $data): AppReview
     {
-        // $forUpdate = $this->matchInputModelValues($data);
-        // $forUpdate['status'] = $data['status'];
-
         if (!$this->reviewRepository->update($review, $data)) {
             throw new RuntimeException('Review has not been updated.');
         }

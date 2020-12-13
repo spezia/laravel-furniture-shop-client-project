@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductDiscountController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\PageController as FrontPageController;
@@ -48,6 +49,15 @@ Route::middleware(['auth', 'web'])->namespace('Admin')->prefix('admin')->group(f
     Route::match(['put', 'patch'], '/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::delete('/products/{product}/image/{image}', [ProductController::class, 'destroyImage'])->name('products.remove.image');
+
+    // Discount
+    Route::get('/product-discounts', [ProductDiscountController::class, 'index'])->name('product-discounts.index');
+    Route::get('/product-discounts/create', [ProductDiscountController::class, 'create'])->name('product-discounts.create');
+    Route::get('/product-discounts/{productDiscount}  ', [ProductDiscountController::class, 'show'])->name('product-discounts.show');
+    Route::get('/product-discounts/{productDiscount}/edit', [ProductDiscountController::class, 'edit'])->name('product-discounts.edit');
+    Route::post('/product-discounts', [ProductDiscountController::class, 'store'])->name('product-discounts.store');
+    Route::match(['put', 'patch'], '/product-discounts/{productDiscount}', [ProductDiscountController::class, 'update'])->name('product-discounts.update');
+    Route::delete('/product-discounts/{productDiscount}/destroy', [ProductDiscountController::class, 'destroy'])->name('product-discounts.destroy');
 
     // Reviews
     Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
@@ -114,6 +124,6 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/' . trans('routes.products') . '/{slug}  ', [FrontProductController::class, 'show'])->name('products.front.show');
 
         // Categories
-        Route::get('/' . trans('routes.categories') . '/{slug}', [FrontPageController::class, 'home'])->name('categories.show');
+        Route::get('/' . trans('routes.categories') . '/{slug}', [FrontPageController::class, 'home'])->name('categories.front.show');
     });
 });

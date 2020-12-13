@@ -75,7 +75,7 @@ class ReviewController extends Controller
             return back()->withInput()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('reviews.index')->with('message', 'Review has been updated successfully.');
+        return redirect()->route('reviews.edit', ['review' => $review->id])->with('message', 'Review has been updated successfully.');
     }
 
     /**

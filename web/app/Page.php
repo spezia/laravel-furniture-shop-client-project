@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Sluggable\HasTranslatableSlug;
 
+/**
+ * IT IS NOT USED FOR NOW
+ */
 class Page extends Model
 {
     use HasTranslations, HasTranslatableSlug, SoftDeletes;

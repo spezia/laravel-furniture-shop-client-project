@@ -27,13 +27,34 @@ class Product
     }
 
     /**
-     * Get All Products
+     * Get All Products (admin section)
      *
      * @return LengthAwarePaginator
      */
     public function getAll(): LengthAwarePaginator
     {
         return $this->productRepository->fetchAll();
+    }
+
+    /**
+     * Get All Enabled Products (admin section, dropdown)
+     *
+     * @return Collection
+     */
+    public function getAllEnabled(): Collection
+    {
+        return $this->productRepository->getAllEnabled();
+    }
+
+    /**
+     * Get All Enabled Products with active discounts (front)
+     * for current date
+     *
+     * @return Collection
+     */
+    public function getWithDiscounts(): Collection
+    {
+        return $this->productRepository->getWithDiscounts(now());
     }
 
     /**
@@ -105,6 +126,17 @@ class Product
 
     /**
      *
+     * @param int $id
+     * 
+     * @return ModelProduct|null
+     */
+    public function fetchById(int $id): ?ModelProduct
+    {
+        return $this->productRepository->getById($id);
+    }
+
+    /**
+     *
      * @param string|null $slug
      * 
      * @return ModelProduct|null
@@ -125,7 +157,7 @@ class Product
         return [
             'name' => $data['name'],
             'description' => $data['description'],
-            'price' => $data['price'],
+            'price' => floatval($data['price']),
             'category_id' => $data['category'],
             'is_enabled' => isset($data['is_enabled']) ? true : false,
         ];

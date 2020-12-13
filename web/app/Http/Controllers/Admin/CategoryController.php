@@ -107,7 +107,7 @@ class CategoryController extends Controller
             return back()->withInput()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('categories.index')->with('message', 'Category has been updated successfully.');
+        return redirect()->route('categories.edit', ['category' => $category->id])->with('message', 'Category has been updated successfully.');
     }
 
     /**

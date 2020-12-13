@@ -12,6 +12,8 @@
     @stack('css')
     <!-- Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    <!-- Datepicker 1.5.0 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     @yield('css')
 @stop
@@ -71,6 +73,8 @@
     @stack('js')
     <!-- Custom scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+     <!-- Datepicker -->
+     <script src="{{ asset('js/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
 @stop

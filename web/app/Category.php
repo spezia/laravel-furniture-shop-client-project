@@ -12,7 +12,7 @@ class Category extends Model
 {
     use HasTranslations, HasTranslatableSlug, SoftDeletes;
 
-    public $translatable = ['name', 'slug'];
+    public $translatable = ['name', 'slug', 'description'];
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +20,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'is_enabled'
+        'name', 'is_enabled', 'description'
     ];
 
     /**
