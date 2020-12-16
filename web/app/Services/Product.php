@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Category;
 use App\Product as ModelProduct;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Repository\ProductRepository;
@@ -47,6 +48,17 @@ class Product
     }
 
     /**
+     *
+     * @param integer $catId
+     * 
+     * @return Collection
+     */
+    public function getAllEnabledByCategoryId(int $catId): Collection
+    {
+        return $this->productRepository->getAllEnabledByCategoryId($catId);
+    }
+
+    /**
      * Get All Enabled Products with active discounts (front)
      * for current date
      *
@@ -58,6 +70,18 @@ class Product
     }
 
     /**
+     * Fetch products by Category
+     *
+     * @param Category $category
+     * 
+     * @return LengthAwarePaginator
+     */
+    public function getWithDiscountsByCategory(Category $category): LengthAwarePaginator
+    {
+        return $this->productRepository->getWithDiscountsByCategory(now(), $category);
+    }
+
+    /**
      * Fetch 6 latest products
      *
      * @return Collection
@@ -65,6 +89,28 @@ class Product
     public function getLatestProducts(): Collection
     {
         return $this->productRepository->getLatestProducts();
+    }
+
+    /**
+     *
+     * @param int $id
+     * 
+     * @return ModelProduct|null
+     */
+    public function fetchById(int $id): ?ModelProduct
+    {
+        return $this->productRepository->getById($id);
+    }
+
+    /**
+     *
+     * @param string|null $slug
+     * 
+     * @return ModelProduct|null
+     */
+    public function fetchBySlug(?string $slug): ?ModelProduct
+    {
+        return $this->productRepository->findBySlug($slug);
     }
 
     /**
@@ -126,28 +172,6 @@ class Product
 
     /**
      *
-     * @param int $id
-     * 
-     * @return ModelProduct|null
-     */
-    public function fetchById(int $id): ?ModelProduct
-    {
-        return $this->productRepository->getById($id);
-    }
-
-    /**
-     *
-     * @param string|null $slug
-     * 
-     * @return ModelProduct|null
-     */
-    public function fetchBySlug(?string $slug): ?ModelProduct
-    {
-        return $this->productRepository->findBySlug($slug);
-    }
-
-    /**
-     *
      * @param  array $data
      *
      * @return array
@@ -157,9 +181,44 @@ class Product
         return [
             'name' => $data['name'],
             'description' => $data['description'],
+            'code' => $data['code'],
+            'properties' => $this->makeJsonOfProperties($data['properties']),
             'price' => floatval($data['price']),
             'category_id' => $data['category'],
             'is_enabled' => isset($data['is_enabled']) ? true : false,
         ];
+    }
+
+    /**
+     * Sanitize textarea field (skip empty values, trim values,...)
+     * 
+     * @param string $data
+     * 
+     * @return array|null
+     */
+    private function makeJsonOfProperties(array $data): ?array
+    {
+        $response = [];
+        if (!$data) {
+            return null;
+        }
+
+        foreach ($data as $local => $properties) {
+            $arrayProperties = explode(',', $properties);
+            if ($arrayProperties) {
+                $values = [];
+                foreach ($arrayProperties as $property) {
+                    $property = trim($property);
+
+                    if ($property) {
+                        $array = explode(':', $property);
+                        $values[] = "{$array[0]}:{$array[1]}";
+                    }
+                }
+                $response[$local] = implode(',', $values);
+            }
+        }
+
+        return $response;
     }
 }

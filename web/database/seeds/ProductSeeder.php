@@ -22,44 +22,48 @@ class ProductSeeder extends Seeder
 
         $imageUrl = 'https://via.placeholder.com/300';
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 10; $i <= 19; $i++) {
 
-            $model = new Product;
-            $model->setTranslations('name', [
-                'en' => 'Chair ' . $i,
-                'de' => 'Stuhl ' . $i,
-                'fr' => 'Chaise ' . $i,
-                'it' => 'Sedia ' . $i,
-            ]);
-            $model->setTranslations('description', [
-                'en' => 'Quality aluminum chair.',
-                'de' => 'Qualitäts-Aluminiumstuhl.',
-                'fr' => 'Chaise en aluminium de qualité.',
-                'it' => 'Sedia in alluminio di qualità.',
-            ]);
-            $model->price = 135;
-            $model->category_id = Category::where('id', $i)->first()->id;
-            $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
-            $model->save();
+            for ($j = 1; $j <= 10; $j++) {
+                $model = new Product;
+                $model->setTranslations('name', [
+                    'en' => 'Chair ' . $i . $j,
+                    'de' => 'Stuhl ' . $i . $j,
+                    'fr' => 'Chaise ' . $i . $j,
+                    'it' => 'Sedia ' . $i . $j,
+                ]);
+                $model->setTranslations('description', [
+                    'en' => 'Quality aluminum chair.',
+                    'de' => 'Qualitäts-Aluminiumstuhl.',
+                    'fr' => 'Chaise en aluminium de qualité.',
+                    'it' => 'Sedia in alluminio di qualità.',
+                ]);
+                $model->price = 135;
+                $model->code = 'A ' . rand(111, 999);
+                $model->category_id = Category::where('id', $j)->first()->id;
+                $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
+                $model->save();
 
-            $model = new Product;
-            $model->setTranslations('name', [
-                'en' => 'Kitchen table ' . $i,
-                'de' => 'Küchentisch ' . $i,
-                'fr' => 'Table de cuisine ' . $i,
-                'it' => 'Tavolo della cucina ' . $i,
-            ]);
-            $model->setTranslations('description', [
-                'en' => 'Kitchen table for 8 people full of wood.',
-                'de' => 'Küchentisch für 8 Personen voller Holz.',
-                'fr' => 'Table de cuisine pour 8 personnes pleine de bois.',
-                'it' => 'Tavolo da cucina per 8 persone pieno di legno.',
-            ]);
-            $model->price = 219.99;
-            $model->category_id = Category::where('id', $i)->first()->id;
-            $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
-            $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
-            $model->save();
+                $model = new Product;
+                $model->setTranslations('name', [
+                    'en' => 'Kitchen table ' . $i . $j,
+                    'de' => 'Küchentisch ' . $i . $j,
+                    'fr' => 'Table de cuisine ' . $i . $j,
+                    'it' => 'Tavolo della cucina ' . $i . $j,
+                ]);
+                $model->setTranslations('description', [
+                    'en' => 'Kitchen table for 8 people full of wood.',
+                    'de' => 'Küchentisch für 8 Personen voller Holz.',
+                    'fr' => 'Table de cuisine pour 8 personnes pleine de bois.',
+                    'it' => 'Tavolo da cucina per 8 persone pieno di legno.',
+                ]);
+                $model->price = 219.99;
+                $model->code = 'B ' . rand(111, 999);
+                $model->category_id = Category::where('id', $j)->first()->id;
+                $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
+                $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
+                $model->save();
+            }
         }
     }
 }

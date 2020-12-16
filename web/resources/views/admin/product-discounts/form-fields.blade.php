@@ -3,7 +3,7 @@
         <div class="form-group">
             <label for="product">{{ __('Product') }}</label>
             <select id="product" name="product_id" class="form-control" {{ isset($isView)? "disabled" : '' }}>
-                <option>--</option>
+                <option value="">--</option>
                 @if($products->count() > 0)
                     @foreach ($products as $product)
                         <option value="{{ $product->id }}" 

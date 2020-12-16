@@ -47,6 +47,16 @@ class Category
     }
 
     /**
+     * Get All Categories with product counts
+     *
+     * @return Collection
+     */
+    public function fetchActiveCategoriesWithCountProducts(): Collection
+    {
+        return $this->categoryRepository->fetchActiveCategoriesWithCountProducts();
+    }
+
+    /**
      * Get All Categories
      *
      * @return Collection
@@ -65,6 +75,15 @@ class Category
     public function categoriesByOrder(string $order = null): Collection
     {
         return $this->categoryRepository->getCategoriesByOrder($order);
+    }
+
+    /**
+     *
+     * @return Category|null
+     */
+    public function fetchFirst(): ?ModelCategory
+    {
+        return $this->categoryRepository->getEnabledCategory();
     }
 
     /**

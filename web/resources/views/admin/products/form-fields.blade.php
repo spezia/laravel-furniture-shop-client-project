@@ -16,7 +16,14 @@
                 </div>
                 <div class="form-group">
                     <label for="description">{{ __('Description') }}</label>
-                    <textarea id="{{ $locale }}-description" type="text" class="form-control" name="description[{{ $locale }}]" {{ isset($isView)? "disabled" : '' }}>{{ $product? old('description.'.$locale, $product->getTranslation('description', $locale)) : old('description.'.$locale) }}</textarea>
+                    <textarea id="{{ $locale }}-description" class="form-control" name="description[{{ $locale }}]" {{ isset($isView)? "disabled" : '' }}>{{ $product? old('description.'.$locale, $product->getTranslation('description', $locale)) : old('description.'.$locale) }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">{{ __('Properties') }}</label>
+                    <small>
+                        <br/>Use comma to separate values. Ex: height: 180, weight: 120, length:50</br> 
+                    </small>
+                    <textarea id="{{ $locale }}-properties" class="form-control" name="properties[{{ $locale }}]" {{ isset($isView)? "disabled" : '' }}>{{ $product? old('properties.'.$locale, $product->getTranslation('properties', $locale)) : old('properties'.$locale) }}</textarea>
                 </div>
             </div>
         @endforeach    
@@ -25,7 +32,7 @@
         <div class="form-group">
             <label>{{ __('Category') }}</label>
             <select id="category" name="category" class="form-control" {{ isset($isView)? "disabled" : '' }}>
-                <option>--</option>
+                <option value="">--</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" 
                         @if((old('category') && $category->id == old('category')) || ($product && $category->id == $product->category->id)) selected="selected" @endif
@@ -37,12 +44,17 @@
         </div>
 
         <div class="form-group">
+            <label>{{ __('Code') }}</label>
+            <input id="code" type="text" value="{{ $product? old('code', $product->code) : old('code') }}" name="code" class="form-control" {{ isset($isView)? "disabled" : '' }}>
+        </div>
+        <div class="form-group">
             <label>{{ __('Price') }}</label>
             <input id="price" type="text" value="{{ $product? old('price', $product->price) : old('price') }}" name="price" class="form-control" {{ isset($isView)? "disabled" : '' }}>
         </div>
 
         @if(!isset($isView))
             <div class="form-group">
+                <label>{{ __('Images') }}</label>
                 @if($product)
                     @foreach ($product->getMedia($collection) as $key => $image)
                         <div class="position-relative margin-top20 row">

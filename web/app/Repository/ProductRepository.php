@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Category;
 use App\Product;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
@@ -43,6 +44,44 @@ class ProductRepository
             ->latest()
             ->take(\config('custom.pages.latest'))
             ->get();
+    }
+
+    /**
+     * Return products by category id
+     *
+     * @param integer $id
+     * 
+     * @return Collection
+     */
+    public function getAllEnabledByCategoryId(int $id): Collection
+    {
+        return Product::where('is_enabled', true)
+            ->where('category_id', $id)
+            ->whereHas('category', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->latest()
+            ->take(\config('custom.pages.latest'))
+            ->get();
+    }
+
+    /**
+     * Fetch products with active discounts by category (front page)
+     * 
+     * @param Carbon $date
+     *
+     * @return LengthAwarePaginator
+     */
+    public function getWithDiscountsByCategory(Carbon $date, Category $category): LengthAwarePaginator
+    {
+        return Product::where('is_enabled', true)
+            ->where('category_id', $category->id)
+            ->with(['discounts' => function ($query) use ($date) {
+                $query->where('from', '<=', $date)
+                    ->where('to', '>=', $date);
+            }])
+            ->orderBy('id', 'desc')
+            ->paginate(\config('custom.pages.show_per_page'));
     }
 
     /**

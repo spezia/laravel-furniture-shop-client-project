@@ -17,8 +17,10 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->json('name');
+            $table->string('code');
             $table->json('slug');
             $table->json('description');
+            $table->json('properties')->nullable();
             $table->decimal('price', 15, 2);
             $table->boolean('is_enabled')->default(true);
             $table->softDeletes();

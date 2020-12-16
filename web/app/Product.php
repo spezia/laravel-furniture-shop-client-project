@@ -5,29 +5,32 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Sluggable\SlugOptions;
-use Spatie\Sluggable\HasTranslatableSlug;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Sluggable\HasTranslatableSlug;
+use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 class Product extends Model implements HasMedia
 {
     use HasTranslations, HasTranslatableSlug, InteractsWithMedia, SoftDeletes;
 
-    public $translatable = ['name', 'slug', 'description'];
+    public $translatable = ['name', 'slug', 'description', 'properties'];
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
     protected $fillable = [
         'name', 'is_enabled', 'category_id',
-        'description', 'price',
+        'description', 'price', 'code', 'properties',
     ];
+
+    /**
+     * @var array
+     */
+    protected $appends = ['single_image', 'properties_array'];
 
     /**
      * Get the options for generating the slug.
@@ -59,14 +62,39 @@ class Product extends Model implements HasMedia
      * Use image from collection
      *
      * @param boolean $thumb
-     * 
-     * @return string
+     *
+     * @return string|null
      */
-    public function fetchSingleImage($thumb = false): string
+    public function getSingleImageAttribute($thumb = false): ?string
     {
-        $media = $this->getMedia(\config('custom.media.product'))->first();
+        if (!$media = $this->getMedia(\config('custom.media.product'))->first()) {
+            return null;
+        }
 
         return $thumb ? $media->getUrl('thumb') : $media->getUrl();
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getPropertiesArrayAttribute(): ?array
+    {
+        $response = [];
+
+        if (!$this->properties) {
+            return null;
+        }
+
+        foreach (explode(',', $this->properties) as $key => $property) {
+            if ($property) {
+                $array = explode(':', $property);
+                $label = ucfirst(trim($array[0]));
+                $value = trim($array[1]);
+                $response[$key] = [$label, $value];
+            }
+        }
+
+        return $response;
     }
 
     /**

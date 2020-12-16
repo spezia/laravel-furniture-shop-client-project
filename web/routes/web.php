@@ -118,12 +118,11 @@ Route::group(['middleware' => ['web']], function () {
 
         //@TODO kako znamo kada je categories a kada products ? ovo definisati i proveriti da li se preklapaju uri ruta!!!
 
-
         // Products
-        Route::get('/' . trans('routes.products'), [FrontPageController::class, 'home'])->name('products.front.home');
-        Route::get('/' . trans('routes.products') . '/{slug}  ', [FrontProductController::class, 'show'])->name('products.front.show');
+        Route::get('/' . trans('routes.products'), [FrontProductController::class, 'home'])->name('products.front.home');
+        Route::get('/' . trans('routes.products') . '/{slug}', [FrontProductController::class, 'show'])->name('products.front.show');
 
         // Categories
-        Route::get('/' . trans('routes.categories') . '/{slug}', [FrontPageController::class, 'home'])->name('categories.front.show');
+        Route::get('/' . trans('routes.categories') . '/{slug}', [FrontProductController::class, 'home'])->name('categories.front.show');
     });
 });

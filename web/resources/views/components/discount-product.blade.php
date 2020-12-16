@@ -14,12 +14,12 @@
                             @foreach ($products as $product)
                             <div class="action-product">
                                 <div class="action-top">
-                                    <img src="{{ $product->fetchSingleImage() }}" alt="{{ $product->name }}" />
+                                    <img src="{{ $product->single_image }}" alt="{{ $product->name }}" />
 
                                     <div class="new-product-hover">
                                         <div>
                                             <button class="white-btn">{{ trans('Stavi u korpu') }}</button><br />
-                                            <a href="{{ route('products.front.show', ['slug' => $product->slug ]) }}"><button class="white-btn">{{ trans('Pogledaj') }}</button></a>
+                                            <a href="{{ route('products.front.show', ['slug' => $product->slug]) }}"><button class="white-btn">{{ trans('Pogledaj') }}</button></a>
                                         </div>
                                     </div>
                                 </div>

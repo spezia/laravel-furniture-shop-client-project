@@ -27,6 +27,7 @@ class ProductUpdate extends FormRequest
             'name.*' => 'required',
             'description.*' => 'required',
             'price' => 'required',
+            'code' => 'required',
             'category' => 'required',
             'is_enabled' => 'boolean',
             'images.*' => 'image|max:1024', // size 1 MB

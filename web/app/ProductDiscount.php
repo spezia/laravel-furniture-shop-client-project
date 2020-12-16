@@ -36,7 +36,15 @@ class ProductDiscount extends Model
         'to' => 'datetime:d.m.Y',
     ];
 
+    /**
+     * @var array
+     */
     protected $with = ['product'];
+
+    /**
+     * @var array
+     */
+    protected $appends = ['is_active'];
 
     /**
      * Check if product has valid discount action

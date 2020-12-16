@@ -30,6 +30,11 @@ class Review extends Model
     ];
 
     /**
+     * @var array
+     */
+    protected $appends = ['name'];
+
+    /**
      *
      * @return array
      */

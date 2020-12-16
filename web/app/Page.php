@@ -18,8 +18,6 @@ class Page extends Model
     public $translatable = ['title', 'content', 'slug'];
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
     protected $fillable = [

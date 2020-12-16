@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="carousel-img" src="{{ $category->products->first()->fetchSingleImage() }}" alt="{{ $category->name }}">
+                <img class="carousel-img" src="{{ $category->products->first()->single_image }}" alt="{{ $category->name }}">
             </div>
             @endforeach
         </div>

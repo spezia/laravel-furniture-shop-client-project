@@ -41,6 +41,12 @@ class CategoryRepository
     public function getCategoriesByOrder(string $orderBy = 'asc'): Collection
     {
         return Category::where('is_enabled', true)
+            ->whereHas('products', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->with(['products' => function ($query) {
+                $query->where('is_enabled', true);
+            }])
             ->orderBy('id', $orderBy)
             ->take(3)
             ->get();
@@ -54,6 +60,21 @@ class CategoryRepository
     public function fetchActiveListCategories(): Collection
     {
         return Category::select(['id', 'name', 'slug'])->where('is_enabled', true)->get();
+    }
+
+    /**
+     * Return all active categories
+     *
+     * @return Collection
+     */
+    public function fetchActiveCategoriesWithCountProducts(): Collection
+    {
+        return Category::select(['id', 'name', 'slug'])
+            ->where('is_enabled', true)
+            ->withCount(['products' => function ($query) {
+                $query->where('is_enabled', true);
+            }])
+            ->get();
     }
 
     /**
@@ -76,7 +97,17 @@ class CategoryRepository
      */
     public function findBySlug(?string $slug): ?Category
     {
-        return Category::where('slug', $slug)->where('is_enabled', true)->first();
+        return Category::where('slug->' . app()->getLocale(), $slug)->where('is_enabled', true)->first();
+    }
+
+    /**
+     * Get enabled Category.
+     *
+     * @return Category|null
+     */
+    public function getEnabledCategory(): ?Category
+    {
+        return Category::where('is_enabled', true)->first();
     }
 
     /**
