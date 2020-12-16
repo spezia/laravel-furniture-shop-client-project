@@ -21,13 +21,13 @@ class ProductController extends Controller
      */
     public function home(string $slug = null, Product $service, Category $categoryService)
     {
-        $category = $slug ?
-            $categoryService->fetchBySlug($slug) : $categoryService->fetchFirst();
+        $categories = $categoryService->fetchActiveCategoriesWithCountProducts();
+        $category = $slug ? $categoryService->fetchBySlug($slug) : $categories->first();
 
         return view('front.product.home', [
             'category' => $category,
-            'products' => $category ? $service->getWithDiscountsByCategory($category) : [], // we need pagination
-            'categories' => $categoryService->fetchActiveCategoriesWithCountProducts(),
+            'products' => $service->getWithDiscountsByCategory($category), // we need pagination
+            'categories' => $categories,
         ]);
     }
 
@@ -45,7 +45,6 @@ class ProductController extends Controller
             abort(404);
         }
 
-        // show front page about ...
         return view('front.product.show', [
             'product' => $model,
             'collection' => \config('custom.media.product'),
