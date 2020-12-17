@@ -3,7 +3,6 @@
 
 use App\Category;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 
 class CategorySeeder extends Seeder
 {
@@ -14,10 +13,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
-        Category::truncate();
-        Schema::enableForeignKeyConstraints();
-
         for ($i = 1; $i <= 5; $i++) {
             $category = new Category;
             $category->setTranslations('name', [

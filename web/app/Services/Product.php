@@ -50,12 +50,13 @@ class Product
     /**
      *
      * @param integer $catId
+     * @param integer $productId
      * 
      * @return Collection
      */
-    public function getAllEnabledByCategoryId(int $catId): Collection
+    public function getSimilarProduct(int $catId, int $productId): Collection
     {
-        return $this->productRepository->getAllEnabledByCategoryId($catId);
+        return $this->productRepository->getSimilarProduct($catId, $productId);
     }
 
     /**
@@ -73,12 +74,15 @@ class Product
      * Fetch products by Category
      *
      * @param Category $category
+     * @param array $order
      * 
      * @return LengthAwarePaginator
      */
-    public function getWithDiscountsByCategory(Category $category): LengthAwarePaginator
+    public function getWithDiscountsByCategory(Category $category, array $order = null): LengthAwarePaginator
     {
-        return $this->productRepository->getWithDiscountsByCategory(now(), $category);
+        $products = $this->productRepository->getWithDiscountsByCategory(now(), $category);
+
+        return $this->sortProductsInPagination($products, $order);
     }
 
     /**
@@ -220,5 +224,35 @@ class Product
         }
 
         return $response;
+    }
+
+    /**
+     * Sort collection in pagination
+     *
+     * @param Collection $productCollection
+     * @param array $order
+     * 
+     * @return LengthAwarePaginator
+     */
+    public function sortProductsInPagination(Collection $productCollection, array $order = null): LengthAwarePaginator
+    {
+        // default without order
+        $collection = $productCollection;
+
+        if ($order && $order['order'] == 'asc') {
+            $collection = $productCollection->sortBy($order['column']);
+        } elseif ($order && $order['order'] == 'desc') {
+            $collection = $productCollection->sortByDesc($order['column']);
+        }
+        unset($productCollection);
+
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+        $perPage = \config('custom.pages.show_per_page');
+        $offset = ($currentPage * $perPage) - $perPage;
+        // Slice the collection to get the products to display in current page
+        $currentPageProducts = $collection->slice($offset, $perPage)->all();
+
+        // Create our paginator and pass it to the view
+        return new LengthAwarePaginator($currentPageProducts, $collection->count(), $perPage);
     }
 }

@@ -115,5 +115,5 @@
 
 </section>
 
-<x-similar-product :category="$product->category->id" />
+<x-similar-product :category="$product->category->id" :product="$product->id" />
 @endsection

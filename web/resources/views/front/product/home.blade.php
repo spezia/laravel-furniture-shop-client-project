@@ -19,12 +19,11 @@
         <div class="container-small">
 
             <div data-aos="fade-up" data-aos-duration="500" class="filter-holder">
-                <select class="filter-select">
+                <select id="order-by" class="filter-select">
                     <option value="" selected disabled hidden>Sortiraj po</option>
-                    <option value="price-up">Ceni rastuce</option>
-                    <option value="price-down">Ceni opadajuce</option>
-                    <option value="name-up">Imenu rastuce</option>
-                    <option value="name-down">Imenu opadajuce</option>
+                    @foreach($sort as $value => $option)
+                        <option value="{{ $value }}" {{ $value == $selectedSort? 'selected':'' }}>{{ $option }}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -68,9 +67,7 @@
                                 <div class="new-product-bottom">
                                     <div class="product-name">{{ $product->name }}</div>
                                     <div class="product-price">
-                                        {{ $product->discounts->count() > 0?
-                                            $product->discounts->first()->new_price .' '. \config('custom.currency')
-                                            : $product->price .' '. \config('custom.currency') }}
+                                        {{ $product->new_price .' '. \config('custom.currency') }}
                                     </div>
                                 </div>
                             </div>
@@ -90,5 +87,17 @@
         </div>
     @endif
 </section>
+@endsection
 
+@section('javascript')
+@parent
+<script>
+    $(document).ready(function () {
+        $('#order-by').on('change', function(e){
+            e.preventDefault();
+            let value = $(this).val();
+            location.href = '{{ url()->current() }}?order=' + value;
+        });
+    });
+</script>
 @endsection

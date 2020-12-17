@@ -3,8 +3,6 @@
 use App\Category;
 use App\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductSeeder extends Seeder
 {
@@ -15,11 +13,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
-        Media::truncate();
-        Product::truncate();
-        Schema::enableForeignKeyConstraints();
-
         $imageUrl = 'https://via.placeholder.com/300';
 
         for ($i = 10; $i <= 19; $i++) {
@@ -38,7 +31,7 @@ class ProductSeeder extends Seeder
                     'fr' => 'Chaise en aluminium de qualité.',
                     'it' => 'Sedia in alluminio di qualità.',
                 ]);
-                $model->price = 135;
+                $model->price = rand(219.99, 319.99);
                 $model->code = 'A ' . rand(111, 999);
                 $model->category_id = Category::where('id', $j)->first()->id;
                 $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));
@@ -57,7 +50,7 @@ class ProductSeeder extends Seeder
                     'fr' => 'Table de cuisine pour 8 personnes pleine de bois.',
                     'it' => 'Tavolo da cucina per 8 persone pieno di legno.',
                 ]);
-                $model->price = 219.99;
+                $model->price = rand(219.99, 319.99);
                 $model->code = 'B ' . rand(111, 999);
                 $model->category_id = Category::where('id', $j)->first()->id;
                 $model->addMediaFromUrl($imageUrl)->toMediaCollection(\config('custom.media.product'));

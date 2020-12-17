@@ -116,8 +116,6 @@ Route::group(['middleware' => ['web']], function () {
         Route::view(trans('routes.impressions'), 'front.pages.impressions')->name('page.impressions');
         Route::view(trans('routes.contact'), 'front.pages.contact')->name('page.contact');
 
-        //@TODO kako znamo kada je categories a kada products ? ovo definisati i proveriti da li se preklapaju uri ruta!!!
-
         // Products
         Route::get('/' . trans('routes.products'), [FrontProductController::class, 'home'])->name('products.front.home');
         Route::get('/' . trans('routes.products') . '/{slug}', [FrontProductController::class, 'show'])->name('products.front.show');

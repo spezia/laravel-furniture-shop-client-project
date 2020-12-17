@@ -47,16 +47,18 @@ class ProductRepository
     }
 
     /**
-     * Return products by category id
+     * Return products by category id except product id
      *
      * @param integer $id
+     * @param integer $productId
      * 
      * @return Collection
      */
-    public function getAllEnabledByCategoryId(int $id): Collection
+    public function getSimilarProduct(int $id, int $productId): Collection
     {
         return Product::where('is_enabled', true)
             ->where('category_id', $id)
+            ->where('id', '!=', $productId)
             ->whereHas('category', function ($query) {
                 $query->where('is_enabled', true);
             })
@@ -69,10 +71,11 @@ class ProductRepository
      * Fetch products with active discounts by category (front page)
      * 
      * @param Carbon $date
+     * @param Category $category
      *
-     * @return LengthAwarePaginator
+     * @return Collection
      */
-    public function getWithDiscountsByCategory(Carbon $date, Category $category): LengthAwarePaginator
+    public function getWithDiscountsByCategory(Carbon $date, Category $category): Collection
     {
         return Product::where('is_enabled', true)
             ->where('category_id', $category->id)
@@ -81,7 +84,7 @@ class ProductRepository
                     ->where('to', '>=', $date);
             }])
             ->orderBy('id', 'desc')
-            ->paginate(\config('custom.pages.show_per_page'));
+            ->get();
     }
 
     /**

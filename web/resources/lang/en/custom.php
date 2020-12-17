@@ -16,4 +16,9 @@ return [
     'contact' => 'Contact',
     'impressions' => 'Impressions',
 
+    // order by products
+    'priceup' => 'Price up',
+    'pricedown' => 'Price down',
+    'nameup' => 'Name up',
+    'namedown' => 'Name down',
 ];

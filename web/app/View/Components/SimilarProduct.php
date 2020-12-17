@@ -18,13 +18,14 @@ class SimilarProduct extends Component
      * Create a new component instance.
      * 
      * @param int $category
+     * @param int $product
      * @param Product $service
      *
      * @return void
      */
-    public function __construct(int $category, Product $service)
+    public function __construct(int $category, int $product, Product $service)
     {
-        $this->products = $service->getAllEnabledByCategoryId($category);
+        $this->products = $service->getSimilarProduct($category, $product);
     }
 
     /**

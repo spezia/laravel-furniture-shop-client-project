@@ -75,6 +75,20 @@ class Product extends Model implements HasMedia
     }
 
     /**
+     * Set up discount new price in product (need for sorting, etc...)
+     *
+     * @return float
+     */
+    public function getNewPriceAttribute(): float
+    {
+        if ($this->discounts->count() > 0 && $discount = $this->discounts->where('is_active', true)) {
+            return $discount->first()->new_price;
+        }
+
+        return $this->price;
+    }
+
+    /**
      * @return array|null
      */
     public function getPropertiesArrayAttribute(): ?array

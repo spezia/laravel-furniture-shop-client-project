@@ -12,8 +12,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::query()->delete();
-
         // create users
         factory(User::class)->create([
             'name' => 'admin',
