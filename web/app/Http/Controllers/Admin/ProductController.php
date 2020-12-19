@@ -79,7 +79,7 @@ class ProductController extends Controller
         } catch (Throwable $e) {
             Log::error($e->getMessage());
 
-            return back()->withInput()->with('error', 'Product has not been added.');
+            return back()->withInput()->with('error', $e->getMessage());
         }
 
         return redirect()->route('products.index')->with('message', 'Product has been added successfully.');

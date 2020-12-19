@@ -30,7 +30,7 @@ class ProductUpdate extends FormRequest
             'code' => 'required',
             'category' => 'required',
             'is_enabled' => 'boolean',
-            'images.*' => 'image|max:1024', // size 1 MB
+            'images.*' => 'image|max:2048', // size 2 MB
         ];
     }
 }

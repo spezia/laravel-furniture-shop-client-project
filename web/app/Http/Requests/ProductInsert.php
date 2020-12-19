@@ -30,7 +30,7 @@ class ProductInsert extends FormRequest
             'code' => 'required',
             'category' => 'required',
             'is_enabled' => 'boolean',
-            'images.*' => 'required|image|max:1024', // size 1 MB'
+            'images.*' => 'required|image|max:2048', // size 2 MB
         ];
     }
 }

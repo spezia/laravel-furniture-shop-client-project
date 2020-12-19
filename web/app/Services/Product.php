@@ -216,6 +216,9 @@ class Product
 
                     if ($property) {
                         $array = explode(':', $property);
+                        if (!isset($array[0]) || !isset($array[1])) {
+                            throw new RuntimeException('Property format (Properties field) is not good. It should be `property:value` separate by comma.');
+                        }
                         $values[] = "{$array[0]}:{$array[1]}";
                     }
                 }
