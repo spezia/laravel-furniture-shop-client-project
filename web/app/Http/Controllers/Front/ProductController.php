@@ -35,7 +35,9 @@ class ProductController extends Controller
         $orderBy = null;
         $selectedSort = null;
         $categories = $categoryService->fetchActiveCategoriesWithCountProducts();
-        $category = $slug ? $categoryService->fetchBySlug($slug) : $categories->first();
+        if (!$category = $slug ? $categoryService->fetchBySlug($slug) : $categories->first()) {
+            abort(404);
+        }
 
         if ($request->has('order')) {
             $orderBy = $urlService->getOrderBy($request->get('order'));
