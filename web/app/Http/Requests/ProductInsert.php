@@ -31,7 +31,19 @@ class ProductInsert extends FormRequest
             'code' => 'required',
             'category' => 'required',
             'is_enabled' => 'boolean',
-            'images.*' => 'required|image|max:2048', // size 2 MB
+            'images.0' => 'required|image|max:2048', // size 2 MB
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'images.0.required' => 'Product image must be uploaded.',
         ];
     }
 }

@@ -149,6 +149,10 @@ class ProductController extends Controller
      */
     public function destroyImage(Product $product, Media $image)
     {
+        if ($product->getMedia(\config('custom.media.product'))->count() == 1) {
+            return back()->with('error', 'File has not been removed. Product must have one image.');
+        }
+
         if ($image->delete()) {
             return redirect()->route('products.edit', ['product' => $product->id])->with('message', 'File has been removed.');
         }
