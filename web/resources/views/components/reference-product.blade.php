@@ -26,8 +26,8 @@
                                     <div class="old-new-price">
                                         <p class="mb-0">
                                             {{ $product->discounts->count() > 0?
-                                                $product->discounts->first()->new_price .' '. \config('custom.currency')
-                                                 : $product->price .' '. \config('custom.currency') }}
+                                                floatval($product->discounts->first()->new_price) .' '. \config('custom.currency')
+                                                 : floatval($product->price) .' '. \config('custom.currency') }}
                                         </p>
                                     </div>
                                 </div>

@@ -83,12 +83,12 @@
                     </div>
                     
                     <div data-aos="fade-up" data-aos-duration="500" class="price">
-                        <div class="current-price">{{ $discount->new_price .' '. \config('custom.currency') }}</div>
-                        <div class="old-price">{{ $product->price .' '. \config('custom.currency')  }}</div>
+                        <div class="current-price">{{ floatval($discount->new_price) .' '. \config('custom.currency') }}</div>
+                        <div class="old-price">{{ floatval($product->price) .' '. \config('custom.currency')  }}</div>
                     </div>
                 @else 
                     <div data-aos="fade-up" data-aos-duration="500" class="price">
-                        <div class="current-price">{{ $product->price .' '. \config('custom.currency')  }}</div>
+                        <div class="current-price">{{ floatval($product->price) .' '. \config('custom.currency')  }}</div>
                     </div>
                 @endif
 

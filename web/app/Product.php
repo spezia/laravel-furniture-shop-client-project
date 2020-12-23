@@ -76,6 +76,7 @@ class Product extends Model implements HasMedia
 
     /**
      * Set up discount new price in product (need for sorting, etc...)
+     * and remove useless zero digits from decimals
      *
      * @return float
      */

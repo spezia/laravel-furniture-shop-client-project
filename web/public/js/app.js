@@ -22,7 +22,7 @@ $(function () {
 
         let html = `<div class="position-relative margin-top20 row">
             <div class="col-10">
-                <label>Image</label>
+                <label>Image <small>(max size 2 MB)</small></label>
                 <input type="file" name="images[]" class="minimal"/>
             </div>
         </div>`;

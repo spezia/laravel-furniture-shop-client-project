@@ -27,7 +27,7 @@
                                     <div class="action-bottom-left">
                                         <div class="product-name">{{ $product->name }}</div>
                                         <div class="old-new-price">
-                                            <div class="product-price">{{ $product->discounts->first()->new_price .' '. \config('custom.currency') }}</div>
+                                            <div class="product-price">{{ floatval($product->discounts->first()->new_price) .' '. \config('custom.currency') }}</div>
                                             <div class="old-price">{{ $product->price .' '. \config('custom.currency') }}</div>
                                         </div>
 

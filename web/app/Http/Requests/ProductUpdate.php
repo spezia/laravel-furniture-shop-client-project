@@ -26,6 +26,7 @@ class ProductUpdate extends FormRequest
         return [
             'name.*' => 'required',
             'description.*' => 'required',
+            'properties.*' => 'required',
             'price' => 'required',
             'code' => 'required',
             'category' => 'required',

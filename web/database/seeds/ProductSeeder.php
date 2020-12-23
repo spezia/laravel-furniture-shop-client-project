@@ -31,6 +31,12 @@ class ProductSeeder extends Seeder
                     'fr' => 'Chaise en aluminium de qualité.',
                     'it' => 'Sedia in alluminio di qualità.',
                 ]);
+                $model->setTranslations('properties', [
+                    'en' => 'height: 180,weight: 120,length:50',
+                    'de' => 'height: 180,weight: 120,length:50',
+                    'fr' => 'height: 180,weight: 120,length:50',
+                    'it' => 'height: 180,weight: 120,length:50',
+                ]);
                 $model->price = rand(219.99, 319.99);
                 $model->code = 'A ' . rand(111, 999);
                 $model->category_id = Category::where('id', $j)->first()->id;
@@ -49,6 +55,12 @@ class ProductSeeder extends Seeder
                     'de' => 'Küchentisch für 8 Personen voller Holz.',
                     'fr' => 'Table de cuisine pour 8 personnes pleine de bois.',
                     'it' => 'Tavolo da cucina per 8 persone pieno di legno.',
+                ]);
+                $model->setTranslations('properties', [
+                    'en' => 'height: 180,weight: 120,length:50',
+                    'de' => 'height: 180,weight: 120,length:50',
+                    'fr' => 'height: 180,weight: 120,length:50',
+                    'it' => 'height: 180,weight: 120,length:50',
                 ]);
                 $model->price = rand(219.99, 319.99);
                 $model->code = 'B ' . rand(111, 999);

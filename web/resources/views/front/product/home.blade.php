@@ -67,7 +67,7 @@
                                 <div class="new-product-bottom">
                                     <div class="product-name">{{ $product->name }}</div>
                                     <div class="product-price">
-                                        {{ $product->new_price .' '. \config('custom.currency') }}
+                                        {{ floatval($product->new_price) .' '. \config('custom.currency') }}
                                     </div>
                                 </div>
                             </div>

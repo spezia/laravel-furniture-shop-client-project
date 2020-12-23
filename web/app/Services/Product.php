@@ -243,9 +243,9 @@ class Product
         $collection = $productCollection;
 
         if ($order && $order['order'] == 'asc') {
-            $collection = $productCollection->sortBy($order['column']);
+            $collection = $this->makeNewCollectionByDiscount($productCollection)->sortBy($order['column']);
         } elseif ($order && $order['order'] == 'desc') {
-            $collection = $productCollection->sortByDesc($order['column']);
+            $collection = $this->makeNewCollectionByDiscount($productCollection)->sortByDesc($order['column']);
         }
         unset($productCollection);
 
@@ -257,5 +257,25 @@ class Product
 
         // Create our paginator and pass it to the view
         return new LengthAwarePaginator($currentPageProducts, $collection->count(), $perPage);
+    }
+
+    /**
+     * If we have discount update product price in collection
+     *
+     * @param Collection $productCollection
+     * 
+     * @return Collection
+     */
+    private function makeNewCollectionByDiscount(Collection $productCollection): Collection
+    {
+        $productCollection->transform(function (ModelProduct $model) {
+            if ($model->discounts->count() > 0) {
+                $model->price = floatval($model->discounts->first()->new_price);
+            }
+
+            return $model;
+        });
+
+        return $productCollection;
     }
 }

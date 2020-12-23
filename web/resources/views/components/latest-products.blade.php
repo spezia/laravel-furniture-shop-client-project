@@ -28,8 +28,8 @@
                                     <div class="product-name">{{ $product->name }}</div>
                                     <div class="product-price">
                                         {{ $product->discounts->count() > 0?
-                                         $product->discounts->first()->new_price .' '. \config('custom.currency')
-                                          : $product->price .' '. \config('custom.currency') }}
+                                         floatval($product->discounts->first()->new_price) .' '. \config('custom.currency')
+                                          : floatval($product->price) .' '. \config('custom.currency') }}
                                     </div>
                                 </div>
                             </div>

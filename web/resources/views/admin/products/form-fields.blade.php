@@ -77,7 +77,7 @@
                 @else
                     <div class="position-relative margin-top20 row">
                         <div class="col-9">
-                            <label>{{ __('image') }}</label>
+                            <label>{{ __('image ') }} <small>(max size 2 MB)</small></label>
                             <input type="file" name="images[]" class="minimal"/>
                         </div>
                     </div>
