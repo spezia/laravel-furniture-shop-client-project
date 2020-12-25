@@ -12,14 +12,37 @@ class ProductDiscountRepository
 {
     /**
      * Return all productDiscounts
+     * @param array $searchData
      *
      * @return LengthAwarePaginator
      */
-    public function fetchAll(): LengthAwarePaginator
+    public function fetchAll(array $searchData = []): LengthAwarePaginator
     {
-        return ProductDiscount::has('product')
-            ->orderBy('id', 'desc')
-            ->paginate(\config('custom.pages.page'));
+        $qb = ProductDiscount::has('product')
+            ->with('product')
+            ->orderBy('id', 'desc');
+
+        if (isset($searchData['name']) && $searchData['name']) {
+            $qb->whereHas('product', function ($q) use ($searchData) {
+                $q->where('name', 'like', '%' . $searchData['name'] . '%');
+            });
+        }
+
+        if (isset($searchData['discount']) && $searchData['discount']) {
+            $qb->where('discount', 'like', '%' . $searchData['discount'] . '%');
+        }
+
+        if (isset($searchData['status'])) {
+            if ($searchData['status'] == 'active') {
+                $qb->where('from', '<', now())
+                    ->where('to', '>', now());
+            } elseif ($searchData['status'] == 'inactive') {
+                $qb->where('from', '>', now())
+                    ->orWhere('to', '<', now());
+            }
+        }
+
+        return $qb->paginate(\config('custom.pages.show_per_page'));
     }
 
     /**

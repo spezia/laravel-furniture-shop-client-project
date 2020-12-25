@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use App\Product;
 use App\Services\Category;
 use App\Services\Product as ProductService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Throwable;
@@ -18,14 +19,17 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @param ProductService $productService
+     * @param Category $categoryServise
      *
      * @return Response
      */
-    public function index(ProductService $productService)
+    public function index(Request $request, ProductService $productService, Category $categoryServise)
     {
         return view('admin.products.home', [
-            'data' => $productService->getAll(),
+            'data' => $productService->getAll($request->all()),
+            'categories' => $categoryServise->getListCategories(),
         ]);
     }
 

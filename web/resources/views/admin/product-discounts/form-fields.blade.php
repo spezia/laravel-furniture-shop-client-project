@@ -7,9 +7,8 @@
                 @if($products->count() > 0)
                     @foreach ($products as $product)
                         <option value="{{ $product->id }}" 
-                            @if((old('product_id') && $product->id == old('product_id')) || ($discount && $product->id == $discount->product->id)) selected="selected" @endif
+                            @if((old('product_id') && $product->id == old('product_id')) || ($discount && $product->id == $discount->product_id)) selected="selected" @endif
                         >
-                        
                             {{ $product->name }}
                         </option>
                     @endforeach

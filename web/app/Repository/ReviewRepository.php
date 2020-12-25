@@ -19,7 +19,7 @@ class ReviewRepository
      */
     public function fetchAll(): LengthAwarePaginator
     {
-        return Review::paginate(\config('custom.reviews.show_per_review'));
+        return Review::orderBy('status', 'asc')->paginate(\config('custom.reviews.show_per_review'));
     }
 
     /**

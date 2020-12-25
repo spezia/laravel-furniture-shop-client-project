@@ -36,12 +36,14 @@ class ProductDiscount
 
     /**
      * Get All ProductDiscounts
+     * 
+     * @param array $searchData
      *
      * @return LengthAwarePaginator
      */
-    public function getAll(): LengthAwarePaginator
+    public function getAll(array $searchData = []): LengthAwarePaginator
     {
-        return $this->productDiscountRepository->fetchAll();
+        return $this->productDiscountRepository->fetchAll($searchData);
     }
 
     /**

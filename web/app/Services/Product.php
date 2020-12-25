@@ -29,12 +29,24 @@ class Product
 
     /**
      * Get All Products (admin section)
+     * 
+     * @param array $searchData
      *
      * @return LengthAwarePaginator
      */
-    public function getAll(): LengthAwarePaginator
+    public function getAll(array $searchData = []): LengthAwarePaginator
     {
-        return $this->productRepository->fetchAll();
+        return $this->productRepository->fetchAll($searchData);
+    }
+
+    /**
+     * Get All Products (admin section)
+     * 
+     * @return Collection
+     */
+    public function getAllAsCollection(): Collection
+    {
+        return $this->productRepository->getAllAsCollection();
     }
 
     /**

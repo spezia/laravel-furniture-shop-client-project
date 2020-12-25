@@ -39,6 +39,10 @@
     margin-top: 20px;
 }
 
+.margin15 {
+    margin: 15px;
+}
+
 .text-underline-hover:hover {
     text-decoration: underline;
 }

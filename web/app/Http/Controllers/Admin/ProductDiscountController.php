@@ -17,14 +17,15 @@ class ProductDiscountController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @param ProductDiscountService $productDiscountService
      *
      * @return Response
      */
-    public function index(ProductDiscountService $productDiscountService)
+    public function index(Request $request, ProductDiscountService $productDiscountService)
     {
         return view('admin.product-discounts.home', [
-            'data' => $productDiscountService->getAll()
+            'data' => $productDiscountService->getAll($request->all())
         ]);
     }
 
@@ -40,7 +41,7 @@ class ProductDiscountController extends Controller
     {
         return view('admin.product-discounts.view', [
             'discount' => $productDiscount,
-            'products' => $productService->getAllEnabled(),
+            'products' => $productService->getAllAsCollection(),
             'isView' => true,
         ]);
     }
@@ -95,7 +96,7 @@ class ProductDiscountController extends Controller
     {
         return view('admin.product-discounts.edit', [
             'discount' => $productDiscount,
-            'products' => $productService->getAllEnabled()
+            'products' => $productService->getAllAsCollection()
         ]);
     }
 

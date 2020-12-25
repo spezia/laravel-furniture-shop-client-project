@@ -15,12 +15,42 @@ class ProductRepository
 {
     /**
      * Return all products
+     * 
+     * @param array $searchData
      *
      * @return LengthAwarePaginator
      */
-    public function fetchAll(): LengthAwarePaginator
+    public function fetchAll(array $searchData = []): LengthAwarePaginator
     {
-        return Product::paginate(\config('custom.pages.show_per_page'));
+        $qb = Product::orderBy('is_enabled', 'desc');
+
+        if (isset($searchData['name']) && $searchData['name']) {
+            $qb->where('name', 'like', '%' . $searchData['name'] . '%');
+        }
+
+        if (isset($searchData['code']) && $searchData['code']) {
+            $qb->where('code', 'like', $searchData['code'] . '%');
+        }
+
+        if (isset($searchData['category']) && $searchData['category']) {
+            $qb->where('category_id', $searchData['category']);
+        }
+
+        if (isset($searchData['status'])) {
+            $qb->where('is_enabled', (int) $searchData['status']);
+        }
+
+        return $qb->paginate(\config('custom.pages.show_per_page'));
+    }
+
+    /**
+     * Return all products
+     *
+     * @return Collection
+     */
+    public function getAllAsCollection(): Collection
+    {
+        return Product::orderBy('is_enabled', 'desc')->get();
     }
 
     /**

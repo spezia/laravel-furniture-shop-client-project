@@ -17,6 +17,28 @@
                             </a>
                         </div>
                     </div>
+                    <div class="box-header with-border margin15">
+                        <form action="{{ route('product-discounts.index') }}" method="GET" class="form-inline">
+                            <div class="form-row">
+                                <div class="col-auto my-1">
+                                    <input id="search_product" type="text" value="{{ request()->get('name') }}" name="name" class="form-control" placeholder="{{ __('Product Name') }}">
+                                </div>
+                                <div class="col-auto my-1">
+                                    <input id="search_discount" type="text" value="{{ request()->get('discount') }}" name="discount" class="form-control" placeholder="{{ __('Discount') }}">
+                                </div>
+                                <div class="col-auto my-1">
+                                    <select name="status" class="custom-select mr-sm-2">
+                                        <option value="">{{ __('Status') }}</option>
+                                        <option value="active" {{ request()->get('status') == 'active'? "selected" : '' }}>{{ __('Active') }}</option>
+                                        <option value="inactive" {{ request()->get('status') == 'inactive'? "selected" : '' }}>{{ __('Not Active') }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto my-1">
+                                    <button type="submit" class="btn btn-primary">{{ __('Search') }}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <!-- /.box-header -->
                     <div class="box-body table-responsive">
                         <table class="table table-bordered table-striped">
@@ -69,7 +91,7 @@
                             @endif
                             </tbody>
                         </table>
-                        {{ $data->links() }}
+                        {{ $data->appends(request()->except('page'))->links() }}
                     </div>
                 </div>
             </div>
