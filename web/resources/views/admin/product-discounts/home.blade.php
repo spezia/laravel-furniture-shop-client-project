@@ -24,7 +24,7 @@
                                     <input id="search_product" type="text" value="{{ request()->get('name') }}" name="name" class="form-control" placeholder="{{ __('Product Name') }}">
                                 </div>
                                 <div class="col-auto my-1">
-                                    <input id="search_discount" type="text" value="{{ request()->get('discount') }}" name="discount" class="form-control" placeholder="{{ __('Discount') }}">
+                                    <input id="search_discount" type="text" value="{{ request()->get('discount') }}" name="discount" class="form-control" placeholder="{{ __('Discount in %') }}">
                                 </div>
                                 <div class="col-auto my-1">
                                     <select name="status" class="custom-select mr-sm-2">
