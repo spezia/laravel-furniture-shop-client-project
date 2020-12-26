@@ -46,7 +46,7 @@ class CategoryRepository
             })
             ->with(['products' => function ($query) {
                 $query->where('is_enabled', true);
-            }])
+            }, 'products.media'])
             ->orderBy('id', $orderBy)
             ->take(3)
             ->get();

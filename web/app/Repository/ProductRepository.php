@@ -14,7 +14,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class ProductRepository
 {
     /**
-     * Return all products
+     * Return all products (admin)
      * 
      * @param array $searchData
      *
@@ -44,7 +44,7 @@ class ProductRepository
     }
 
     /**
-     * Return all products
+     * Return all products (admin - discounts page)
      *
      * @return Collection
      */
@@ -54,13 +54,17 @@ class ProductRepository
     }
 
     /**
-     * Fetch enabled products
+     * Fetch enabled products (admin discounts create)
      *
      * @return Collection
      */
     public function getAllEnabled(): Collection
     {
-        return Product::where('is_enabled', true)->get();
+        return Product::where('is_enabled', true)
+            ->whereHas('category', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->get();
     }
 
     /**
@@ -71,6 +75,11 @@ class ProductRepository
     public function getLatestProducts(): Collection
     {
         return Product::where('is_enabled', true)
+            ->has('media')
+            ->whereHas('category', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->with(['media', 'discounts'])
             ->latest()
             ->take(\config('custom.pages.latest'))
             ->get();
@@ -92,6 +101,7 @@ class ProductRepository
             ->whereHas('category', function ($query) {
                 $query->where('is_enabled', true);
             })
+            ->with(['category', 'media', 'discounts'])
             ->latest()
             ->take(\config('custom.pages.latest'))
             ->get();
@@ -109,7 +119,10 @@ class ProductRepository
     {
         return Product::where('is_enabled', true)
             ->where('category_id', $category->id)
-            ->with(['discounts' => function ($query) use ($date) {
+            ->whereHas('category', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->with(['media', 'discounts' => function ($query) use ($date) {
                 $query->where('from', '<=', $date)
                     ->where('to', '>=', $date);
             }])
@@ -131,7 +144,10 @@ class ProductRepository
                 $query->where('from', '<=', $date)
                     ->where('to', '>=', $date);
             })
-            ->with(['discounts' => function ($query) use ($date) {
+            ->whereHas('category', function ($query) use ($date) {
+                $query->where('is_enabled', true);
+            })
+            ->with(['media', 'discounts' => function ($query) use ($date) {
                 $query->where('from', '<=', $date)
                     ->where('to', '>=', $date);
             }])
@@ -140,7 +156,7 @@ class ProductRepository
     }
 
     /**
-     * Get Product by id.
+     * Get Product by id. (admin)
      * 
      * @param int $productId
      * 
@@ -160,6 +176,10 @@ class ProductRepository
     public function findBySlug(?string $slug): ?Product
     {
         return Product::where('slug->' . app()->getLocale(), $slug)
+            ->whereHas('category', function ($query) {
+                $query->where('is_enabled', true);
+            })
+            ->with(['media', 'category', 'discounts'])
             ->where('is_enabled', true)
             ->first();
     }
