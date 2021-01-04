@@ -12,5 +12,5 @@ return [
     'contact' => 'contatto',
     'products' => 'alcuni-prodotti',
     'impressions' => 'impressioni',
-
+    'cart' => 'carrello',
 ];

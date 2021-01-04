@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDiscountController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\PageController as FrontPageController;
 use App\Http\Controllers\Front\ProductController as FrontProductController;
@@ -122,5 +123,8 @@ Route::group(['middleware' => ['web']], function () {
 
         // Categories
         Route::get('/' . trans('routes.categories') . '/{slug}', [FrontProductController::class, 'home'])->name('categories.front.show');
+
+        // Cart
+        Route::get('/' . trans('routes.cart'), [CartController::class, 'home'])->name('cart.front');
     });
 });

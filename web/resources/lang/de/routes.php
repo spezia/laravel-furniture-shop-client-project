@@ -14,5 +14,6 @@ return [
     'impressions' => 'impressionen',
     'categories' => 'kategorien',
     'products' => 'produkte',
+    'cart' => 'warenkorb',
 
 ];

@@ -12,5 +12,5 @@ return [
     'contact' => 'contact',
     'products' => 'produits',
     'impressions' => 'impressions',
-
+    'cart' => 'chariot',
 ];
