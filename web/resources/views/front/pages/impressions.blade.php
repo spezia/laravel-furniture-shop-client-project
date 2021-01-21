@@ -27,10 +27,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="col-md-12">
-                    <div class="js-review-response alert alert-success margin-top20 no-borders">
-                    </div>
-                    <div class="js-review-error-response alert alert-danger margin-top20 no-borders">
-                    </div>
+                    <x-response-message/>
                 </div>
 
                 <div class="category-big-txt text-center">Ostavite vaš utisak</div>

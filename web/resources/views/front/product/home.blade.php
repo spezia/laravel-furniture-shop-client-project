@@ -19,6 +19,9 @@
         <div class="container-small">
 
             <div data-aos="fade-up" data-aos-duration="500" class="filter-holder">
+
+                <x-response-message/>
+                
                 <select id="order-by" class="filter-select">
                     <option value="" selected disabled hidden>Sortiraj po</option>
                     @foreach($sort as $value => $option)
@@ -46,6 +49,7 @@
                         @endforeach    
                     </ul>
                 </div>
+
                 @if(count($products) > 0)
                 <div class="products">
                     <div class="clearfix p-0">
@@ -59,7 +63,7 @@
 
                                     <div class="new-product-hover">
                                         <div>
-                                            <button class="white-btn">Stavi u korpu</button>
+                                            <button class="js-cart white-btn" data-url="{{ route('cart.front.add', ['id' => $product->id]) }}">{{ trans('Stavi u korpu') }}</button>
                                             <a href="{{ route('products.front.show', ['slug' => $product->slug]) }}"><button class="white-btn">Pogledaj</button></a>
                                         </div>
                                     </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDiscountController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
@@ -50,6 +51,11 @@ Route::middleware(['auth', 'web'])->namespace('Admin')->prefix('admin')->group(f
     Route::match(['put', 'patch'], '/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::delete('/products/{product}/image/{image}', [ProductController::class, 'destroyImage'])->name('products.remove.image');
+
+    // Orders
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+    Route::delete('/orders/{order}/destroy', [OrderController::class, 'destroy'])->name('orders.destroy');
 
     // Discount
     Route::get('/product-discounts', [ProductDiscountController::class, 'index'])->name('product-discounts.index');
@@ -126,5 +132,7 @@ Route::group(['middleware' => ['web']], function () {
 
         // Cart
         Route::get('/' . trans('routes.cart'), [CartController::class, 'home'])->name('cart.front');
+        Route::post('/' . trans('routes.cart') . '/' . trans('add') . '/{id}', [CartController::class, 'add'])->name('cart.front.add');
+        Route::post('/order', [CartController::class, 'order'])->name('cart.front.order');
     });
 });

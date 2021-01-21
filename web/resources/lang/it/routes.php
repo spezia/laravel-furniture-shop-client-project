@@ -13,4 +13,5 @@ return [
     'products' => 'alcuni-prodotti',
     'impressions' => 'impressioni',
     'cart' => 'carrello',
+    'add' => 'add',
 ];

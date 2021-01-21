@@ -14,6 +14,7 @@
             <div class="col-lg-6">
                 <div data-aos="fade-up" data-aos-duration="500">
 
+                    <x-response-message/>
 
                     <div class="imglist">
                         <div class="main-thumb">
@@ -93,16 +94,19 @@
                 @endif
 
                 <div data-aos="fade-up" data-aos-duration="500" class="product-buy">
-                    <div class="product-number">
-                        <button class="up-down minus">-</button>
-                        <input type="text" class="pieces" readonly="readonly" value="1" />
-                        <button class="up-down plus">+</button>
-                    </div>
+                    <form id="js-cartshop">
+                        @csrf
+                        <div class="product-number">
+                            <button class="up-down minus">-</button>
+                            <input type="text" name="quantity" class="pieces" readonly="readonly" value="1" />
+                            <button class="up-down plus">+</button>
+                        </div>
 
-                    <div class="cart-buttons">
-                        <button class="to-cart">Dodaj u korpu</button>
-                        <button class="to-cart">Pogledaj korpu</button>
-                    </div>
+                        <div class="cart-buttons">
+                            <button class="js-cart to-cart" data-url="{{ route('cart.front.add', ['id' => $product->id]) }}">{{ trans('Stavi u korpu') }}</button>
+                            <a href="{{ route('cart.front') }}"><button class="to-cart">Pogledaj korpu</button></a>
+                        </div>
+                    </form> 
                 </div>
             </div>
         </div>

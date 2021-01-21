@@ -258,6 +258,11 @@ return [
             'url'  => '/admin/product-discounts',
             'icon' => 'fas fa-th-list',
         ],
+        [
+            'text' => 'Orders',
+            'url'  => '/admin/orders',
+            'icon' => 'fas fa-shopping-cart',
+        ],
         // [
         //     'text' => 'Language',
         //     'url'  => 'languages',

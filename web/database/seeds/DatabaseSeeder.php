@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(MediaSeeder::class); // has to be first -> remove all files from disk
         $this->call(UserSeeder::class);
-        $this->call(CategorySeeder::class);
-        $this->call(ProductSeeder::class);
+        if (env('APP_ENV') == 'local') {
+            $this->call(CategorySeeder::class);
+            $this->call(ProductSeeder::class);
+        }
     }
 }

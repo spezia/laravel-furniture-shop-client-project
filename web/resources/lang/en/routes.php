@@ -15,5 +15,6 @@ return [
     'categories' => 'categories',
     'products' => 'products',
     'cart' => 'cart',
+    'add' => 'add',
 
 ];

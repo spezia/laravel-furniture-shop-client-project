@@ -15,5 +15,5 @@ return [
     'categories' => 'kategorien',
     'products' => 'produkte',
     'cart' => 'warenkorb',
-
+    'add' => 'add',
 ];

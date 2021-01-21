@@ -18,7 +18,7 @@
 
                                     <div class="new-product-hover">
                                         <div>
-                                            <button class="white-btn">{{ trans('Stavi u korpu') }}</button><br />
+                                            <button class="js-cart white-btn" data-url="{{ route('cart.front.add', ['id' => $product->id]) }}">{{ trans('Stavi u korpu') }}</button><br />
                                             <a href="{{ route('products.front.show', ['slug' => $product->slug]) }}"><button class="white-btn">{{ trans('Pogledaj') }}</button></a>
                                         </div>
                                     </div>

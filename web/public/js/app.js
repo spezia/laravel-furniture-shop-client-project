@@ -1,8 +1,8 @@
 $(function () {
 
     // default setup
-    $('.js-review-response').hide();
-    $('.js-review-error-response').hide();
+    $('.js-response').hide();
+    $('.js-error-response').hide();
 
     $('body').on('focus', ".date", function () {
         $(this).datepicker({
@@ -42,8 +42,8 @@ $(function () {
     // send product review
     $('#review-submit').on('click', function (e) {
         e.preventDefault();
-        $('.js-review-response').hide();
-        $('.js-review-error-response').hide();
+        $('.js-response').hide();
+        $('.js-error-response').hide();
 
         var data = $('#reviewform').serialize();
 
@@ -54,23 +54,58 @@ $(function () {
             data: data,
             dataType: 'json',
             success: function (response) {
-                console.log(response);
                 if (response.status == 1) {
-                    $('.js-review-response').html(response.msg).show();
-                    $('.js-review-error-response').hide();
+                    $('.js-response').html(response.msg).show();
+                    $('.js-error-response').hide();
                     $("#reviewform").trigger('reset');
                 } else {
-                    $('.js-review-error-response').html(response.msg).show();
-                    $('.js-review-response').hide();
+                    $('.js-error-response').html(response.msg).show();
+                    $('.js-response').hide();
                 }
             },
             error: function (xhr) {
-                $('.js-review-error-response').html('');
+                $('.js-error-response').html('');
                 $.each(xhr.responseJSON.errors, function (key, value) {
-                    $('.js-review-error-response').append('<div class="alert alert-danger">' + value + '</div');
+                    $('.js-error-response').append('<div class="alert alert-danger">' + value + '</div');
                 });
-                $('.js-review-error-response').show();
+                $('.js-error-response').show();
             }
         });
     });
+
+    // add to shopping cart
+    $('.js-cart').on('click', function (e) {
+        e.preventDefault();
+        $('.js-response').hide();
+        $('.js-error-response').hide();
+        let data = $('#js-cartshop').serialize();
+        let url = $(this).data('url');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            async: true,
+            data: data,
+            dataType: 'json',
+            success: function (response) {
+                if (response.status == 1) {
+                    $('.js-response').html(response.msg).show();
+                    $('.js-error-response').hide();
+                    $('#js-shopping-total').html(response.totalItems);
+                } else {
+                    $('.js-error-response').html(response.msg).show();
+                    $('.js-response').hide();
+                }
+            },
+            error: function (xhr) {
+                $('.js-error-response').html('');
+                $.each(xhr.responseJSON.errors, function (key, value) {
+                    $('.js-error-response').append('<div class="alert alert-danger">' + value + '</div');
+                });
+                $('.js-error-response').show();
+            }
+        });
+    });
+
+
 })

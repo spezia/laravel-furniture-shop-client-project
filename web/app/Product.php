@@ -61,17 +61,29 @@ class Product extends Model implements HasMedia
     /**
      * Use image from collection
      *
-     * @param boolean $thumb
-     *
      * @return string|null
      */
-    public function getSingleImageAttribute($thumb = false): ?string
+    public function getSingleImageAttribute(): ?string
     {
         if (!$media = $this->getMedia(\config('custom.media.product'))->first()) {
             return null;
         }
 
-        return $thumb ? $media->getUrl('thumb') : $media->getUrl();
+        return $media->getUrl();
+    }
+
+    /**
+     * Use image from collection
+     *
+     * @return string|null
+     */
+    public function getSingleImageSmallAttribute(): ?string
+    {
+        if (!$media = $this->getMedia(\config('custom.media.product'))->first()) {
+            return null;
+        }
+
+        return $media->getUrl('thumb');
     }
 
     /**
