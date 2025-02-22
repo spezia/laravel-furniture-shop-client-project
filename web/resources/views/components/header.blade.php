@@ -2,7 +2,7 @@
     <div class="top-header">
         <div class="container-big">
         <div class="space-between">
-            <div>Mail: info@konstantinhome.com |<br class="d-sm-none" /> Tel: +381 9841012345</div>
+            <div>Mail: info@konstantinhome.com |<br class="d-sm-none" /> Tel: +381 0000001</div>
             <div>
             <a href="#"><img src="{{ asset('img/header-footer/instagram.png') }}" alt="instagram" /></a>
             <a href="#"><img src="{{ asset('img/header-footer/fb.png') }}" alt="facebook" /></a>

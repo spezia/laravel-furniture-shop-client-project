@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $imageUrl = 'https://via.placeholder.com/300';
+        $imageUrl = 'https://dummyimage.com/300x200/999/fff&text=Placeholder';
 
         for ($i = 10; $i <= 19; $i++) {
 
