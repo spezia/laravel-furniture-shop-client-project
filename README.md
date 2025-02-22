@@ -10,7 +10,7 @@ I used **Blade components** to build the frontend, making the templates easy to 
 ## Project Status
 
 - **Project is discontinued and remains 80% complete.**
-- **Last updated:** 5 years ago.
+- **Last updated:** Jan 24, 2021.
 - **PHP version:** 7.4
 - **Laravel version:** 7.24
 
@@ -26,7 +26,7 @@ I used **Blade components** to build the frontend, making the templates easy to 
 - **Shopping Cart:** Users can add products to their cart. Cart data is stored in both the session and the database.
 - **Multi-Language Support:** The application is set up to support multiple languages.
 - **Admin Panel:** The project includes an admin panel for managing the site.
-  
+
 
 ## Screenshots
 ![Homepage](./web/screenshots/home.png)
