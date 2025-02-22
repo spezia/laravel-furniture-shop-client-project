@@ -9,7 +9,6 @@ RUN echo "deb http://deb.debian.org/debian bullseye main" > /etc/apt/sources.lis
     apt-get clean
 
 COPY ./docker/app.conf /etc/apache2/sites-available/app.conf
-COPY ./docker/env.conf ${APP_HOME}/.env
 
 RUN a2enmod rewrite && a2ensite app.conf && \
     apt-get update && apt-get install --yes \
