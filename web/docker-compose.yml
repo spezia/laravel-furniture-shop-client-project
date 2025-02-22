@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: app
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - dbmysql
+
+  dbmysql:
+    image: mariadb:10.6.16
+    container_name: dbmysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: pass123
+      MYSQL_DATABASE: konstantin
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  adminer:
+    image: adminer:4.8.1-standalone
+    restart: unless-stopped
+    environment:
+      ADMINER_DESIGN: konya
+    ports:
+      - 9000:8080
+    depends_on:
+      - dbmysql
+
+volumes:
+  dbdata:
+    driver: local

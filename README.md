@@ -14,18 +14,17 @@ I used **Blade components** to build the frontend, making the templates easy to 
 - **PHP version:** 7.4
 - **Laravel version:** 7.24
 
-## Known Issues
-- Stripe payment integration is not implemented.
-- Some UI components may not be fully responsive.
-- No automated tests are included.
-- Translations for some static text are missing.
-
-
 ## Features
 
 - **Shopping Cart:** Users can add products to their cart. Cart data is stored in both the session and the database.
 - **Multi-Language Support:** The application is set up to support multiple languages.
 - **Admin Panel:** The project includes an admin panel for managing the site.
+
+## Known Issues
+- Stripe payment integration is not implemented.
+- Some UI components may not be fully responsive.
+- No automated tests are included.
+- Translations for some static text are missing.
 
 
 ## Screenshots
@@ -64,34 +63,35 @@ To run this project locally, follow these steps:
 ```
 2. **Configuration:**
 
-[Laravel 7 documentation](https://laravel.com/docs/7.x/installation#configuration)
-
- If you want to run the project using Docker, create a **.env** file in the root directory and configure the database settings as follows:
-
-```
-APP_NAME=Laravel
-APP_KEY=base64:nlBWj2cemHj0YG9ctE9tov/UjQEOHAqpWfylqcydj/k=
-APP_URL=http://app.local:8000/
-
-LOG_CHANNEL=stack
-
-DB_CONNECTION=mysql
-DB_HOST=dbmysql
-DB_PORT=3306
-DB_DATABASE=konstantin
-DB_USERNAME=dbuser
-DB_PASSWORD=dbpass
-...
+Follow the official [Laravel 7 documentation](https://laravel.com/docs/7.x/installation#configuration) for setup instructions.
+After configuring the environment, start the Laravel development server by running:
 
 ```
+php artisan serve
+```
 
-Update your hosts file
+By default, the application will be available at:
+```
+http://127.0.0.1:8000
+```
 
+
+## Running with Docker
+
+ If you want to run the project using Docker, after cloning the repository, update your hosts file
+
+ - **Linux/macOS:** `/etc/hosts`
+ - **Windows:**  `C:\Windows\System32\drivers\etc\hosts`
+
+
+ by adding the following entry:
 ```
 127.0.0.1   app.local
 ```
 
-and run
+After updating the hosts file, restart your web server for the changes to take effect. 
+
+Then, start the Docker containers by running:
 
 ```
 sh start.sh
@@ -103,7 +103,7 @@ To stop the Docker containers, run
 sh stop.sh
 ```
 
-If you use Docker you can start the app
+Once the containers are running, you can access the application at:
 
 ```
 http://app.local:8000
