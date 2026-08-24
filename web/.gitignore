@@ -5,7 +5,9 @@
 !/storage/public/
 /vendor
 .env
-.env.backup
+.env.*
+!.env.example
+docker/env.conf
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
